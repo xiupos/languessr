@@ -1,12 +1,16 @@
 <script lang="ts">
   export let langCode: string;
 
+  let unique = {};
+
   const fetchSummary = (async (langCode: string) => {
     const res = await fetch(`https://${langCode}.wikipedia.org/api/rest_v1/page/random/summary`);
     return await res.json();
   });
 
-  let unique = {};
+  const reload = () => {
+    unique = {}
+  };
 </script>
 
 {#key unique}
@@ -15,7 +19,7 @@
   {:then data}
     <article class="frame" dir="auto">
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-      <h1 on:click={()=>{unique = {}}}>{data.title} <small><i class="fa fa-refresh" aria-hidden="true"></i></small></h1>
+      <h1 on:click={reload}>{data.title} <small><i class="fa fa-refresh" aria-hidden="true" /></small></h1>
       <p>{data.extract}</p>
       <footer dir="ltr">
         <p class="secondary">
@@ -31,17 +35,15 @@
     margin-top: 0;
     user-select: none;
 
-    footer {
-      .secondary {
+    .secondary {
+      color: var(--secondary);
+
+      a {
         color: var(--secondary);
+        text-decoration: underline;
 
-        a {
-          color: var(--secondary);
-          text-decoration: underline;
-
-          &:hover {
-            color: var(--secondary-hover);
-          }
+        &:hover {
+          color: var(--secondary-hover);
         }
       }
     }

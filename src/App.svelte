@@ -14,20 +14,56 @@
   // user-selected languge code
   let selectedLang: { code: string, name: { local: string, english: string } };
 
-  // English
+  // English mode
   let enChecked: boolean;
 
+  // dialog element
+  let dialog: HTMLDialogElement;
+
+  // dialog next button
+  const dialogNext = () => {
+    dialog.open = false;
+  };
+
   const guess = () => () => {
-    if (trueLang.code === selectedLang.code) {
-      alert(`Nice🎉 The right answer was indeed ${enChecked ? trueLang.name.english : trueLang.name.local} (${trueLang.code}).`);
-    } else {
-      alert(`You guessed ${enChecked ? selectedLang.name.english : selectedLang.name.local} (${selectedLang.code}) but the right answer was ${enChecked ? trueLang.name.english : trueLang.name.local} (${trueLang.code}).`);
-    }
+    dialog.open = true;
     trueLang = getRandomLang();
-  }
+  };
 </script>
 
+<dialog bind:this={dialog}>
+  {#if dialog?.open}
+    <article>
+      {#if selectedLang.code && trueLang.code === selectedLang.code}
+        <h3>Nice🎉</h3>
+        <p>
+          The right answer was indeed
+          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank"
+            >{enChecked ? trueLang.name.english : trueLang.name.local} ({trueLang.code})</a
+          >.
+        </p>
+      {:else}
+        <h3>Oops..</h3>
+        <p>
+          You guessed
+          <a href="https://{selectedLang.code}.wikipedia.org/" target="_blank"
+            >{enChecked ? selectedLang.name.english : selectedLang.name.local} ({selectedLang.code})</a
+          >
+          but the right answer was
+          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank"
+            >{enChecked ? trueLang.name.english : trueLang.name.local} ({trueLang.code})</a
+          >.
+        </p>
+      {/if}
+      <footer>
+        <input type="button" value="Next" on:click={dialogNext}>
+      </footer>
+    </article>
+  {/if}
+</dialog>
+
 <Frame bind:langCode={trueLang.code} />
+<p class="secondary">Click <i class="fa fa-refresh" aria-hidden="true" /> for another article in the same language.</p>
 
 <form>
   <label>

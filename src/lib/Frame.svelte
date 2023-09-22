@@ -19,7 +19,12 @@
   {:then data}
     <article class="frame" dir="auto">
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-      <h2 on:click={reload}>{data.title} <small class="secondary"><i class="fa fa-refresh" aria-hidden="true" /></small></h2>
+      <h2 on:click={reload}>
+        {data.title}
+        <small class="secondary">
+          <i class="fa fa-refresh" aria-hidden="true" />
+        </small>
+      </h2>
       <p>{data.extract}</p>
       <footer dir="ltr">
         <p class="secondary">

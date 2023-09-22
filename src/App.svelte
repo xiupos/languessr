@@ -40,21 +40,24 @@
         <h3>Nice🎉</h3>
         <p>
           The right answer was indeed
-          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank"
-            >{enChecked ? trueLang.name.english : trueLang.name.local} ({trueLang.code})</a
-          >.
+          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank">
+            {enChecked ? trueLang.name.english : trueLang.name.local}
+            ({trueLang.code})
+          </a>.
         </p>
       {:else}
         <h3>Oops..</h3>
         <p>
           You guessed
-          <a href="https://{selectedLang.code}.wikipedia.org/" target="_blank"
-            >{enChecked ? selectedLang.name.english : selectedLang.name.local} ({selectedLang.code})</a
-          >
+          <a href="https://{selectedLang.code}.wikipedia.org/" target="_blank">
+            {enChecked ? selectedLang.name.english : selectedLang.name.local}
+            ({selectedLang.code})
+          </a>
           but the right answer was
-          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank"
-            >{enChecked ? trueLang.name.english : trueLang.name.local} ({trueLang.code})</a
-          >.
+          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank">
+            {enChecked ? trueLang.name.english : trueLang.name.local}
+            ({trueLang.code})
+          </a>.
         </p>
       {/if}
       <footer>

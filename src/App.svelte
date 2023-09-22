@@ -6,13 +6,14 @@
   import codeList from "./lib/code.json";
 
   // get a random language code
-  const getRandomLang = () => codeList[Math.floor(Math.random() * codeList.length)];
+  const getRandomLang = () =>
+    codeList[Math.floor(Math.random() * codeList.length)];
 
   // answer language code
   let trueLang = getRandomLang();
 
   // user-selected languge code
-  let selectedLang: { code: string, name: { local: string, english: string } };
+  let selectedLang: { code: string; name: { local: string; english: string } };
 
   // English mode
   let enChecked: boolean;
@@ -56,14 +57,17 @@
         </p>
       {/if}
       <footer>
-        <input type="button" value="Next" on:click={dialogNext}>
+        <input type="button" value="Next" on:click={dialogNext} />
       </footer>
     </article>
   {/if}
 </dialog>
 
 <Frame bind:langCode={trueLang.code} />
-<p class="secondary">Click <i class="fa fa-refresh" aria-hidden="true" /> for another article in the same language.</p>
+<p class="secondary">
+  Click <i class="fa fa-refresh" aria-hidden="true" /> for another article in the
+  same language.
+</p>
 
 <form>
   <label>
@@ -84,9 +88,8 @@
     </label>
   </fieldset>
 
-  <input type="button" value="GUESS" on:click={guess()}>
+  <input type="button" value="GUESS" on:click={guess()} />
 </form>
 
 <style lang="scss">
-
 </style>

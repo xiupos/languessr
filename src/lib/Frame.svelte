@@ -17,7 +17,11 @@
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions a11y-click-events-have-key-events a11y-no-static-element-interactions -->
       <h1 on:click={()=>{unique = {}}}>{data.title} <small><i class="fa fa-refresh" aria-hidden="true"></i></small></h1>
       <p>{data.extract}</p>
-      <footer><a href="https://creativecommons.org/licenses/by/4.0/">CC BY-SA 4.0</a> from <a href="https://en.wikipedia.org/api/rest_v1/">Wikipedia</a></footer>
+      <footer dir="ltr">
+        <p class="secondary">
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY-SA 4.0</a> from <a href="https://en.wikipedia.org/api/rest_v1/">Wikipedia</a>
+        </p>
+      </footer>
     </article>
   {/await}
 {/key}
@@ -28,11 +32,17 @@
     user-select: none;
 
     footer {
-      color: var(--secondary);
-
-      a {
+      .secondary {
         color: var(--secondary);
-        text-decoration: underline;
+
+        a {
+          color: var(--secondary);
+          text-decoration: underline;
+
+          &:hover {
+            color: var(--secondary-hover);
+          }
+        }
       }
     }
   }

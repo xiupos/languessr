@@ -18,25 +18,50 @@
   // English mode
   let enChecked: boolean;
 
-  // dialog element
-  let dialog: HTMLDialogElement;
+  // guess-dialog element
+  let guessDialog: HTMLDialogElement;
 
-  // dialog next button
-  const dialogNext = () => {
-    dialog.open = false;
-    trueLang = getRandomLang();
-  };
+  // result dialog element
+  let resultDialog: HTMLDialogElement;
+
+  // turn of game
+  let turn: number = 0;
+  const maxTurn: number = 5;
+
+  // score of game
+  let score: number = 0;
 
   // guess button
   const guess = () => {
-    dialog.open = true;
+    if (trueLang.code === selectedLang.code) score++;
+    guessDialog.open = true;
+  };
+
+  // next button
+  const next = () => {
+    guessDialog.open = false;
+    turn++;
+    if (turn < maxTurn) {
+      trueLang = getRandomLang();
+    } else {
+      resultDialog.open = true;
+    }
+  };
+
+  // restart button
+  const restart = () => {
+    turn = 0;
+    score = 0;
+    resultDialog.open = false;
+    trueLang = getRandomLang();
   };
 </script>
 
-<dialog bind:this={dialog}>
-  {#if dialog?.open}
+<!-- guess dialog -->
+<dialog bind:this={guessDialog}>
+  {#if guessDialog?.open}
     <article>
-      {#if selectedLang.code && trueLang.code === selectedLang.code}
+      {#if trueLang.code === selectedLang.code}
         <h3>Nice🎉</h3>
         <p>
           The right answer was indeed
@@ -61,18 +86,45 @@
         </p>
       {/if}
       <footer>
-        <input type="button" value="Next" on:click={dialogNext} />
+        <label>
+          Score
+          <progress value={score} max={maxTurn} />
+        </label>
+        <input type="button" value="Next" on:click={next} />
       </footer>
     </article>
   {/if}
 </dialog>
 
+<!-- result dialog -->
+<dialog bind:this={resultDialog}>
+  {#if resultDialog?.open}
+    <article>
+      <h3>
+        You guessed {score} / {maxTurn} correctly! {"🎉".repeat(score)}
+      </h3>
+      <label>
+        Result
+        <textarea style="resize: none;" readonly>#LangGuessr 📖 {score}/{maxTurn} {"🎉".repeat(score)}
+{location.href}</textarea>
+      </label>
+      Copy-and-paste the result to share, or start a new game ↓
+      <footer>
+        <input type="button" value="Restart" on:click={restart} />
+      </footer>
+    </article>
+  {/if}
+</dialog>
+
+<!-- article frame -->
 <Frame bind:langCode={trueLang.code} />
+
 <p class="secondary">
   Click <i class="fa fa-refresh" aria-hidden="true" /> for another article in the
   same language.
 </p>
 
+<!-- guess form -->
 <form>
   <label>
     Select your guess
@@ -92,8 +144,11 @@
     </label>
   </fieldset>
 
-  <input type="button" value="GUESS" on:click={guess} />
+  <input type="button" value="GUESS {turn + 1}/{maxTurn}" on:click={guess} />
 </form>
 
 <style lang="scss">
+  dialog article > footer {
+    text-align: unset;
+  }
 </style>

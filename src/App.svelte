@@ -23,11 +23,11 @@
   // dialog next button
   const dialogNext = () => {
     dialog.open = false;
+    trueLang = getRandomLang();
   };
 
   const guess = () => () => {
     dialog.open = true;
-    trueLang = getRandomLang();
   };
 </script>
 

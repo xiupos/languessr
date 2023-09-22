@@ -27,7 +27,8 @@
     trueLang = getRandomLang();
   };
 
-  const guess = () => () => {
+  // guess button
+  const guess = () => {
     dialog.open = true;
   };
 </script>
@@ -88,7 +89,7 @@
     </label>
   </fieldset>
 
-  <input type="button" value="GUESS" on:click={guess()} />
+  <input type="button" value="GUESS" on:click={guess} />
 </form>
 
 <style lang="scss">

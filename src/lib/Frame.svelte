@@ -33,6 +33,9 @@
         </p>
       </footer>
     </article>
+  {:catch error}
+    <article aria-busy="true"></article>
+    { (() => { console.log(error); setTimeout(reload, 1000); return '' })() }
   {/await}
 {/key}
 

@@ -316,9 +316,9 @@
   { "code": "xmf", "name": { "english": "Mingrelian", "local": "მარგალური" } },
   { "code": "yi", "name": { "english": "Yiddish", "local": "ייִדיש" } },
   { "code": "yo", "name": { "english": "Yoruba", "local": "Yorùbá" } },
-  { "code": "yue", "name": { "english": "Cantonese", "local": "粵語" } },
   { "code": "za", "name": { "english": "Zhuang", "local": "Vahcuengh" } },
   { "code": "zea", "name": { "english": "Zeelandic", "local": "Zeêuws" } },
   { "code": "zh", "name": { "english": "Chinese", "local": "中文" } },
+  { "code": "zh-yue", "name": { "english": "Cantonese", "local": "粵語" } },
   { "code": "zu", "name": { "english": "Zulu", "local": "isiZulu" } }
 ]

@@ -97,6 +97,6 @@
   { "code": "vec", "name": { "english": "Venetian", "local": "vèneto" } },
   { "code": "vi", "name": { "english": "Vietnamese", "local": "Tiếng Việt" } },
   { "code": "war", "name": { "english": "Waray", "local": "Winaray" } },
-  { "code": "yue", "name": { "english": "Cantonese", "local": "粵語" } },
-  { "code": "zh", "name": { "english": "Chinese", "local": "中文" } }
+  { "code": "zh", "name": { "english": "Chinese", "local": "中文" } },
+  { "code": "zh-yue", "name": { "english": "Cantonese", "local": "粵語" } }
 ]

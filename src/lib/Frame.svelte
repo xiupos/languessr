@@ -28,7 +28,8 @@
       <p>{data.extract}</p>
       <footer dir="ltr">
         <p class="secondary">
-          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY-SA 4.0</a> from <a href="https://en.wikipedia.org/api/rest_v1/">Wikipedia</a>
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY-SA 4.0</a>
+          from <a href="https://en.wikipedia.org/api/rest_v1/" target="_blank">Wikipedia</a>
         </p>
       </footer>
     </article>

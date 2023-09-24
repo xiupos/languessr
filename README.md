@@ -23,7 +23,7 @@
   </table>
 </div>
 
-## Extarnal links <small>[<a href="https://github.com/xiupos/langguessr/edit/main/README.md">Edit</a>]</small>
+## External links <small>[<a href="https://github.com/xiupos/langguessr/edit/main/README.md">Edit</a>]</small>
 
 - [Official website](https://langguessr.xiupos.net/)
 

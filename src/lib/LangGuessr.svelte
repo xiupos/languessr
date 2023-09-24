@@ -110,7 +110,7 @@
           </a>.
         </p>
       {:else}
-        <h3>Oops..</h3>
+        <h3>Oops!</h3>
         <p>
           You guessed
           <a href="https://{selectedLang.code}.wikipedia.org/" target="_blank">

@@ -7,3 +7,4 @@ A game that guesses the language of a randomly displayed Wikipedia article summa
 - [x] Scoring
 - [x] Timer
 - [x] Easy mode
+- [ ] PWA

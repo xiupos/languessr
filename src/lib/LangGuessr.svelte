@@ -173,7 +173,7 @@
 <!-- guess form -->
 <form>
   <label>
-    Select your guess
+    Select your guess <em class="secondary">{codeList.length} languages</em>
     <select bind:value={selectedLang}>
       {#each codeList as lang}
         <option value={lang}>
@@ -205,5 +205,13 @@
 <style lang="scss">
   dialog article > footer {
     text-align: unset;
+  }
+
+  form {
+    margin-top: var(--block-spacing-vertical);
+  }
+
+  .secondary {
+    color: var(--secondary);
   }
 </style>

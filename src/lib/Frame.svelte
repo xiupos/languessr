@@ -41,7 +41,8 @@
 
 <style lang="scss">
   article {
-    margin-top: 0;
+    margin: 0;
+    margin-bottom: var(--spacing);
     user-select: none;
 
     h2 i {

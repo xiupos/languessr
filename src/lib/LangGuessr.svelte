@@ -1,6 +1,7 @@
 <script lang="ts">
   import { tweened } from "svelte/motion";
   import Frame from "./Frame.svelte";
+  import Dialog from "./Dialog.svelte";
 
   // language list
   export let codeList: {
@@ -62,10 +63,10 @@
   let inEnglish: boolean = localStorage.inEnglish === "true";
 
   // guess-dialog element
-  let guessDialog: HTMLDialogElement;
+  let guessDialog: boolean = false;
 
   // result dialog element
-  let resultDialog: HTMLDialogElement;
+  let resultDialog: boolean = false;
 
   // turn of game
   let turn: number = 0;
@@ -77,18 +78,18 @@
   // guess button
   const guess = () => {
     if (trueLang.code === selectedLang.code) score++;
-    guessDialog.open = true;
+    guessDialog = true;
   };
 
   // next button
   const next = () => {
-    guessDialog.open = false;
+    guessDialog = false;
     turn++;
     if (turn < maxTurn) {
       trueLang = getRandomLang();
     } else {
       stopTimer();
-      resultDialog.open = true;
+      resultDialog = true;
     }
   };
 
@@ -96,123 +97,113 @@
   const restart = () => {
     turn = 0;
     score = 0;
-    resultDialog.open = false;
+    resultDialog = false;
     trueLang = getRandomLang();
     startTimer();
   };
 </script>
 
 <!-- guess dialog -->
-<dialog bind:this={guessDialog}>
-  {#if guessDialog?.open}
-    <article>
-      {#if trueLang.code === selectedLang.code}
-        <h3>Nice🎉</h3>
-        <p>
-          The right answer was indeed
-          {#if inEnglish}
-            <a
-              href="https://en.wikipedia.org/wiki/{encodeURIComponent(
-                trueLang.name.english
-              )}"
-              target="_blank"
-            >
-              {trueLang.name.english} ({trueLang.code})</a
-            >.
-          {:else}
-            <a
-              href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
-                trueLang.name.local
-              )}"
-              target="_blank"
-            >
-              {trueLang.name.local} ({trueLang.code})</a
-            >.
-          {/if}
-        </p>
+<Dialog bind:open={guessDialog}>
+  {#if trueLang.code === selectedLang.code}
+    <h3>Nice🎉</h3>
+    <p>
+      The right answer was indeed
+      {#if inEnglish}
+        <a
+          href="https://en.wikipedia.org/wiki/{encodeURIComponent(
+            trueLang.name.english
+          )}"
+          target="_blank"
+        >
+          {trueLang.name.english} ({trueLang.code})</a
+        >.
       {:else}
-        <h3>Oops!</h3>
-        <p>
-          You guessed
-          {#if inEnglish}
-            <a
-              href="https://en.wikipedia.org/wiki/{encodeURIComponent(
-                selectedLang.name.english
-              )}"
-              target="_blank"
-            >
-              {selectedLang.name.english} ({selectedLang.code})
-            </a>
-          {:else}
-            <a
-              href="https://{selectedLang.code}.wikipedia.org/wiki/{encodeURIComponent(
-                selectedLang.name.local
-              )}"
-              target="_blank"
-            >
-              {selectedLang.name.local} ({selectedLang.code})
-            </a>
-          {/if}
-          but the right answer was
-          {#if inEnglish}
-            <a
-              href="https://en.wikipedia.org/wiki/{encodeURIComponent(
-                trueLang.name.english
-              )}"
-              target="_blank"
-            >
-              {trueLang.name.english} ({trueLang.code})</a
-            >.
-          {:else}
-            <a
-              href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
-                trueLang.name.local
-              )}"
-              target="_blank"
-            >
-              {trueLang.name.local} ({trueLang.code})</a
-            >.
-          {/if}
-        </p>
+        <a
+          href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
+            trueLang.name.local
+          )}"
+          target="_blank"
+        >
+          {trueLang.name.local} ({trueLang.code})</a
+        >.
       {/if}
-      <footer>
-        <label>
-          Score
-          <progress value={score} max={maxTurn} />
-        </label>
-        <input type="button" value="Next" on:click={next} />
-      </footer>
-    </article>
+    </p>
+  {:else}
+    <h3>Oops!</h3>
+    <p>
+      You guessed
+      {#if inEnglish}
+        <a
+          href="https://en.wikipedia.org/wiki/{encodeURIComponent(
+            selectedLang.name.english
+          )}"
+          target="_blank"
+        >
+          {selectedLang.name.english} ({selectedLang.code})
+        </a>
+      {:else}
+        <a
+          href="https://{selectedLang.code}.wikipedia.org/wiki/{encodeURIComponent(
+            selectedLang.name.local
+          )}"
+          target="_blank"
+        >
+          {selectedLang.name.local} ({selectedLang.code})
+        </a>
+      {/if}
+      but the right answer was
+      {#if inEnglish}
+        <a
+          href="https://en.wikipedia.org/wiki/{encodeURIComponent(
+            trueLang.name.english
+          )}"
+          target="_blank"
+        >
+          {trueLang.name.english} ({trueLang.code})</a
+        >.
+      {:else}
+        <a
+          href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
+            trueLang.name.local
+          )}"
+          target="_blank"
+        >
+          {trueLang.name.local} ({trueLang.code})</a
+        >.
+      {/if}
+    </p>
   {/if}
-</dialog>
+  <footer style="text-align: unset;">
+    <label>
+      Score
+      <progress value={score} max={maxTurn} />
+    </label>
+    <input type="button" value="Next" on:click={next} />
+  </footer>
+</Dialog>
 
 <!-- result dialog -->
-<dialog bind:this={resultDialog}>
-  {#if resultDialog?.open}
-    <article>
-      <h3>
-        You guessed {score} / {maxTurn} correctly! {"🎉".repeat(score)}
-      </h3>
-      <h4>
-        {#if mode !== undefined}Mode: {mode}, {/if}Time: {format(getTime())}
-      </h4>
-      <label>
-        Result
-        <textarea style="resize: none;" readonly
-          >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(
-            getTime()
-          )}{score
-            ? " " + "🎉".repeat(score)
-            : ""}&#10;{location.href}</textarea
-        >
-      </label>
-      Copy-and-paste the result to share, or start a new game ↓
-      <footer>
-        <input type="button" value="Restart" on:click={restart} />
-      </footer>
-    </article>
-  {/if}
-</dialog>
+<Dialog bind:open={resultDialog}>
+  <h3>
+    You guessed {score} / {maxTurn} correctly! {"🎉".repeat(score)}
+  </h3>
+  <h4>
+    {#if mode !== undefined}Mode: {mode}, {/if}Time: {format(getTime())}
+  </h4>
+  <label>
+    Result
+    <textarea style="resize: none;" readonly
+      >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(
+        getTime()
+      )}{score ? " " + "🎉".repeat(score) : ""}&#10;{location.href}</textarea
+    >
+  </label>
+  Copy-and-paste the result to share, or start a new game ↓
+  <footer>
+    <input type="button" value="Restart" on:click={restart} />
+  </footer>
+</Dialog>
 
 <!-- article frame -->
 <Frame bind:langCode={trueLang.code} />
@@ -257,10 +248,6 @@
 </form>
 
 <style lang="scss">
-  dialog article > footer {
-    text-align: unset;
-  }
-
   form {
     margin-top: var(--block-spacing-vertical);
   }

@@ -41,9 +41,16 @@
       $approxTime = new Date().getTime() - $timer.start.getTime();
   }, 10);
 
+  // format time
+  let format = (time: number) => {
+    const min = Math.floor(time / 1000 / 60).toString().padStart(2, '0');
+    const sec = Math.floor(time / 1000 % 60).toString().padStart(2, '0');
+    const msec = Math.floor(time % 1000).toString().padStart(3, '0');
+    return `${min}:${sec}.${msec}`;
+  };
+
   // get result time
-  let getTime = () =>
-    (($timer.stop.getTime() - $timer.start.getTime()) / 1000).toFixed(2);
+  let getTime = () => $timer.stop.getTime() - $timer.start.getTime();
 
   // in English mode
   let inEnglish: boolean = localStorage.inEnglish === "true";
@@ -136,12 +143,12 @@
         You guessed {score} / {maxTurn} correctly! {"🎉".repeat(score)}
       </h3>
       <h4>
-        {#if mode !== undefined}Mode: {mode}, {/if}Time: {getTime()} s
+        {#if mode !== undefined}Mode: {mode}, {/if}Time: {format(getTime())}
       </h4>
       <label>
         Result
         <textarea style="resize: none;" readonly
-          >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {getTime()} s{score
+          >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(getTime())}{score
             ? " " + "🎉".repeat(score)
             : ""}
 {location.href}</textarea
@@ -192,7 +199,7 @@
 
   <input type="button" value="GUESS {turn + 1}/{maxTurn}" on:click={guess} />
 
-  Time: {($approxTime / 1000).toFixed(2)} s
+  Time: {format($approxTime)}
 </form>
 
 <style lang="scss">

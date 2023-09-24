@@ -203,7 +203,7 @@
             getTime()
           )}{score
             ? " " + "🎉".repeat(score)
-            : ""}&#13;&#10;{location.href}</textarea
+            : ""}&#10;{location.href}</textarea
         >
       </label>
       Copy-and-paste the result to share, or start a new game ↓

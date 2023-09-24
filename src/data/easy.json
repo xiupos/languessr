@@ -62,7 +62,6 @@
   { "code": "mr", "name": { "english": "Marathi", "local": "मराठी" } },
   { "code": "ms", "name": { "english": "Malay", "local": "Bahasa Melayu" } },
   { "code": "my", "name": { "english": "Burmese", "local": "မြန်မာဘာသာ" } },
-  { "code": "nan", "name": { "english": "Min Nan Chinese", "local": "Bân-lâm-gú" } },
   { "code": "nds", "name": { "english": "Low German", "local": "Plattdüütsch" } },
   { "code": "new", "name": { "english": "Newari", "local": "नेपाल भाषा" } },
   { "code": "nl", "name": { "english": "Dutch", "local": "Nederlands" } },
@@ -98,5 +97,6 @@
   { "code": "vi", "name": { "english": "Vietnamese", "local": "Tiếng Việt" } },
   { "code": "war", "name": { "english": "Waray", "local": "Winaray" } },
   { "code": "zh", "name": { "english": "Chinese", "local": "中文" } },
+  { "code": "zh-min-nan", "name": { "english": "Min Nan Chinese", "local": "Bân-lâm-gú" } },
   { "code": "zh-yue", "name": { "english": "Cantonese", "local": "粵語" } }
 ]

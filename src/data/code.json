@@ -194,7 +194,6 @@
   { "code": "myv", "name": { "english": "Erzya", "local": "эрзянь" } },
   { "code": "mzn", "name": { "english": "Mazanderani", "local": "مازِرونی" } },
   { "code": "nah", "name": { "english": "Nāhuatl", "local": "Nāhuatl" } },
-  { "code": "nan", "name": { "english": "Min Nan Chinese", "local": "Bân-lâm-gú" } },
   { "code": "nap", "name": { "english": "Neapolitan", "local": "Napulitano" } },
   { "code": "nds", "name": { "english": "Low German", "local": "Plattdüütsch" } },
   { "code": "nds-nl", "name": { "english": "Low Saxon", "local": "Nedersaksies" } },
@@ -319,6 +318,7 @@
   { "code": "za", "name": { "english": "Zhuang", "local": "Vahcuengh" } },
   { "code": "zea", "name": { "english": "Zeelandic", "local": "Zeêuws" } },
   { "code": "zh", "name": { "english": "Chinese", "local": "中文" } },
+  { "code": "zh-min-nan", "name": { "english": "Min Nan Chinese", "local": "Bân-lâm-gú" } },
   { "code": "zh-yue", "name": { "english": "Cantonese", "local": "粵語" } },
   { "code": "zu", "name": { "english": "Zulu", "local": "isiZulu" } }
 ]

@@ -43,9 +43,15 @@
 
   // format time
   let format = (time: number) => {
-    const min = Math.floor(time / 1000 / 60).toString().padStart(2, '0');
-    const sec = Math.floor(time / 1000 % 60).toString().padStart(2, '0');
-    const msec = Math.floor(time % 1000).toString().padStart(3, '0');
+    const min = Math.floor(time / 1000 / 60)
+      .toString()
+      .padStart(2, "0");
+    const sec = Math.floor((time / 1000) % 60)
+      .toString()
+      .padStart(2, "0");
+    const msec = Math.floor(time % 1000)
+      .toString()
+      .padStart(3, "0");
     return `${min}:${sec}.${msec}`;
   };
 
@@ -120,8 +126,8 @@
           but the right answer was
           <a href="https://{trueLang.code}.wikipedia.org/" target="_blank">
             {inEnglish ? trueLang.name.english : trueLang.name.local}
-            ({trueLang.code})
-          </a>.
+            ({trueLang.code})</a
+          >.
         </p>
       {/if}
       <footer>
@@ -148,9 +154,9 @@
       <label>
         Result
         <textarea style="resize: none;" readonly
-          >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(getTime())}{score
-            ? " " + "🎉".repeat(score)
-            : ""}
+          >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(
+            getTime()
+          )}{score ? " " + "🎉".repeat(score) : ""}
 {location.href}</textarea
         >
       </label>
@@ -173,7 +179,9 @@
 <!-- guess form -->
 <form>
   <label>
-    Select your guess <em class="secondary">from {codeList.length} language{#if codeList.length > 1}s{/if}</em>
+    Select your guess <i class="secondary"
+      >from {codeList.length} language{#if codeList.length > 1}s{/if}</i
+    >
     <select bind:value={selectedLang}>
       {#each codeList as lang}
         <option value={lang}>

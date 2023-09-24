@@ -13,7 +13,7 @@
   export let turn: number;
   export let maxTurn: number;
   export let guess: () => void;
-  export let time: number;
+  export let time: number | undefined = undefined;
 </script>
 
 <form>
@@ -46,5 +46,7 @@
 
   <input type="button" value="GUESS {turn + 1}/{maxTurn}" on:click={guess} />
 
-  Time: <tt>{format(time)}</tt>
+  {#if time}
+    Time: <tt>{format(time)}</tt>
+  {/if}
 </form>

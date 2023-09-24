@@ -3,7 +3,10 @@
   import Frame from "./Frame.svelte";
 
   // language list
-  export let codeList: { code: string; name: { local: string; english: string } }[];
+  export let codeList: {
+    code: string;
+    name: { local: string; english: string };
+  }[];
 
   // mode name
   export let mode: string | undefined = undefined;
@@ -34,14 +37,16 @@
   // approximate time to display
   let approxTime = tweened(0);
   setInterval(() => {
-    if (turn < maxTurn) $approxTime = new Date().getTime() - $timer.start.getTime();
+    if (turn < maxTurn)
+      $approxTime = new Date().getTime() - $timer.start.getTime();
   }, 10);
 
   // get result time
-  let getTime = () => (($timer.stop.getTime() - $timer.start.getTime()) / 1000).toFixed(2);
+  let getTime = () =>
+    (($timer.stop.getTime() - $timer.start.getTime()) / 1000).toFixed(2);
 
   // in English mode
-  let inEnglish: boolean;
+  let inEnglish: boolean = localStorage.inEnglish === "true";
 
   // guess-dialog element
   let guessDialog: HTMLDialogElement;
@@ -130,11 +135,17 @@
       <h3>
         You guessed {score} / {maxTurn} correctly! {"🎉".repeat(score)}
       </h3>
-      <h4>{#if mode !== undefined}Mode: {mode}, {/if}Time: {getTime()} s</h4>
+      <h4>
+        {#if mode !== undefined}Mode: {mode}, {/if}Time: {getTime()} s
+      </h4>
       <label>
         Result
-        <textarea style="resize: none;" readonly>#LangGuessr 📖 { mode ? "Easy " : "" }{score}/{maxTurn} in {getTime()} s{ score ? " " + "🎉".repeat(score) : "" }
-{location.href}</textarea>
+        <textarea style="resize: none;" readonly
+          >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {getTime()} s{score
+            ? " " + "🎉".repeat(score)
+            : ""}
+{location.href}</textarea
+        >
       </label>
       Copy-and-paste the result to share, or start a new game ↓
       <footer>
@@ -167,7 +178,14 @@
 
   <fieldset>
     <label>
-      <input type="checkbox" role="switch" bind:checked={inEnglish} />
+      <input
+        type="checkbox"
+        role="switch"
+        bind:checked={inEnglish}
+        on:change={() => {
+          localStorage.inEnglish = inEnglish ? "true" : false;
+        }}
+      />
       In English
     </label>
   </fieldset>

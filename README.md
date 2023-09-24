@@ -8,4 +8,4 @@ A game that guesses the language of a randomly displayed Wikipedia article summa
 - [x] Timer
 - [x] Easy mode
 - [ ] PWA
-- [ ] Save modes to LocalStorage
+- [x] Save modes to LocalStorage

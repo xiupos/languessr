@@ -110,24 +110,69 @@
         <h3>Nice🎉</h3>
         <p>
           The right answer was indeed
-          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank">
-            {inEnglish ? trueLang.name.english : trueLang.name.local}
-            ({trueLang.code})
-          </a>.
+          {#if inEnglish}
+            <a
+              href="https://en.wikipedia.org/wiki/{encodeURIComponent(
+                trueLang.name.english
+              )}"
+              target="_blank"
+            >
+              {trueLang.name.english} ({trueLang.code})</a
+            >.
+          {:else}
+            <a
+              href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
+                trueLang.name.local
+              )}"
+              target="_blank"
+            >
+              {trueLang.name.local} ({trueLang.code})</a
+            >.
+          {/if}
         </p>
       {:else}
         <h3>Oops!</h3>
         <p>
           You guessed
-          <a href="https://{selectedLang.code}.wikipedia.org/" target="_blank">
-            {inEnglish ? selectedLang.name.english : selectedLang.name.local}
-            ({selectedLang.code})
-          </a>
+          {#if inEnglish}
+            <a
+              href="https://en.wikipedia.org/wiki/{encodeURIComponent(
+                selectedLang.name.english
+              )}"
+              target="_blank"
+            >
+              {selectedLang.name.english} ({selectedLang.code})
+            </a>
+          {:else}
+            <a
+              href="https://{selectedLang.code}.wikipedia.org/wiki/{encodeURIComponent(
+                selectedLang.name.local
+              )}"
+              target="_blank"
+            >
+              {selectedLang.name.local} ({selectedLang.code})
+            </a>
+          {/if}
           but the right answer was
-          <a href="https://{trueLang.code}.wikipedia.org/" target="_blank">
-            {inEnglish ? trueLang.name.english : trueLang.name.local}
-            ({trueLang.code})</a
-          >.
+          {#if inEnglish}
+            <a
+              href="https://en.wikipedia.org/wiki/{encodeURIComponent(
+                trueLang.name.english
+              )}"
+              target="_blank"
+            >
+              {trueLang.name.english} ({trueLang.code})</a
+            >.
+          {:else}
+            <a
+              href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
+                trueLang.name.local
+              )}"
+              target="_blank"
+            >
+              {trueLang.name.local} ({trueLang.code})</a
+            >.
+          {/if}
         </p>
       {/if}
       <footer>
@@ -156,8 +201,9 @@
         <textarea style="resize: none;" readonly
           >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(
             getTime()
-          )}{score ? " " + "🎉".repeat(score) : ""}
-{location.href}</textarea
+          )}{score
+            ? " " + "🎉".repeat(score)
+            : ""}&#13;&#10;{location.href}</textarea
         >
       </label>
       Copy-and-paste the result to share, or start a new game ↓

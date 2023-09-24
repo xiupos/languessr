@@ -173,7 +173,7 @@
 <!-- guess form -->
 <form>
   <label>
-    Select your guess <em class="secondary">{codeList.length} languages</em>
+    Select your guess <em class="secondary">from {codeList.length} language{#if codeList.length > 1}s{/if}</em>
     <select bind:value={selectedLang}>
       {#each codeList as lang}
         <option value={lang}>

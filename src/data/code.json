@@ -171,7 +171,6 @@
   { "code": "lt", "name": { "english": "Lithuanian", "local": "lietuvių" } },
   { "code": "ltg", "name": { "english": "Latgalian", "local": "latgaļu" } },
   { "code": "lv", "name": { "english": "Latvian", "local": "latviešu" } },
-  { "code": "lzh", "name": { "english": "Literary Chinese", "local": "文言" } },
   { "code": "mad", "name": { "english": "Madurese", "local": "Madhurâ" } },
   { "code": "mai", "name": { "english": "Maithili", "local": "मैथिली" } },
   { "code": "map-bms", "name": { "english": "Basa Banyumasan", "local": "Basa Banyumasan" } },
@@ -318,6 +317,7 @@
   { "code": "za", "name": { "english": "Zhuang", "local": "Vahcuengh" } },
   { "code": "zea", "name": { "english": "Zeelandic", "local": "Zeêuws" } },
   { "code": "zh", "name": { "english": "Chinese", "local": "中文" } },
+  { "code": "zh-classical", "name": { "english": "Literary Chinese", "local": "文言" } },
   { "code": "zh-min-nan", "name": { "english": "Min Nan Chinese", "local": "Bân-lâm-gú" } },
   { "code": "zh-yue", "name": { "english": "Cantonese", "local": "粵語" } },
   { "code": "zu", "name": { "english": "Zulu", "local": "isiZulu" } }

@@ -196,7 +196,7 @@
     <textarea style="resize: none;" readonly
       >#LangGuessr 📖 {mode ? "Easy " : ""}{score}/{maxTurn} in {format(
         getTime()
-      )}{score ? " " + "🎉".repeat(score) : ""}&#10;{location.href}</textarea
+      )}{score ? " " + "🎉".repeat(score) : ""}&#10;&#13;{location.href}</textarea
     >
   </label>
   Copy-and-paste the result to share, or start a new game ↓

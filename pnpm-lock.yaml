@@ -5,12 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@picocss/pico':
+    specifier: ^1.5.10
+    version: 1.5.10
   '@sveltejs/vite-plugin-svelte':
     specifier: ^2.4.2
     version: 2.4.6(svelte@4.2.1)(vite@4.4.9)
   '@tsconfig/svelte':
     specifier: ^5.0.0
     version: 5.0.2
+  fork-awesome:
+    specifier: ^1.2.0
+    version: 1.2.0
   sass:
     specifier: ^1.68.0
     version: 1.68.0
@@ -289,6 +295,10 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@picocss/pico@1.5.10:
+    resolution: {integrity: sha512-+LafMsrwPxXQMk6sI///TmSInCwwZmq+K7SikyL3N/4GhhwzyPC+TQLUEqmrLyjluR+uIpFFcqjty30Rtr6GxQ==}
+    dev: true
+
   /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@4.2.1)(vite@4.4.9):
     resolution: {integrity: sha512-zjiuZ3yydBtwpF3bj0kQNV0YXe+iKE545QGZVTaylW3eAzFr+pJ/cwK8lZEaRp4JtaJXhD5DyWAV4AxLh6DgaQ==}
     engines: {node: ^14.18.0 || >= 16}
@@ -521,6 +531,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       to-regex-range: 5.0.1
+    dev: true
+
+  /fork-awesome@1.2.0:
+    resolution: {integrity: sha512-MNwTBnnudMIweHfDtTY8TeR5fxIAZ2w9o8ITn5XDySqdxa4k5AH8IuAMa89RVxDxgPNlosZxqkFKN5UmHXuYSw==}
+    engines: {node: '>=0.10.3'}
     dev: true
 
   /fs.realpath@1.0.0:

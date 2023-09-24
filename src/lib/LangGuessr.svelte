@@ -208,15 +208,10 @@
 <!-- article frame -->
 <Frame bind:langCode={trueLang.code} />
 
-<p class="secondary">
-  Click <i class="fa fa-refresh" aria-hidden="true" /> for another article in the
-  same language.
-</p>
-
 <!-- guess form -->
 <form>
   <label>
-    Select your guess <i class="secondary"
+    Select your guess <i style="color: var(--secondary)"
       >from {codeList.length} language{#if codeList.length > 1}s{/if}</i
     >
     <select bind:value={selectedLang}>
@@ -246,13 +241,3 @@
 
   Time: {format($approxTime)}
 </form>
-
-<style lang="scss">
-  form {
-    margin-top: var(--block-spacing-vertical);
-  }
-
-  .secondary {
-    color: var(--secondary);
-  }
-</style>

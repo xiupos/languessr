@@ -32,5 +32,5 @@
 - [x] Scoring
 - [x] Timer
 - [x] Easy mode
-- [ ] PWA
+- [x] PWA
 - [x] Save modes to LocalStorage

@@ -14,6 +14,38 @@
   export let score: number;
   export let maxScore: number;
   export let next: () => void;
+
+  let trueLangName: string;
+  let selectedLangName: string;
+
+  let trueLangURL: string;
+  let selectedLangURL: string;
+
+  $: trueLangName = inEnglish
+    ? `${trueLang.name.english} (${trueLang.code})`
+    : `${trueLang.name.local} (${trueLang.code})`;
+  $: selectedLangName =
+    (selectedLang?.name !== undefined || "") &&
+    (inEnglish
+      ? `${selectedLang.name.english} (${selectedLang.code})`
+      : `${selectedLang.name.local} (${selectedLang.code})`);
+
+  $: trueLangURL = inEnglish
+    ? `https://en.wikipedia.org/wiki/${encodeURIComponent(
+        trueLang.name.english
+      )}`
+    : `https://${trueLang.code}.wikipedia.org/wiki/${encodeURIComponent(
+        trueLang.name.local
+      )}`;
+  $: selectedLangURL =
+    (selectedLang?.name !== undefined || "") &&
+    (inEnglish
+      ? `https://en.wikipedia.org/wiki/${encodeURIComponent(
+          selectedLang.name.english
+        )}`
+      : `https://${selectedLang.code}.wikipedia.org/wiki/${encodeURIComponent(
+          selectedLang.name.local.split("/")[0].trim()
+        )}`);
 </script>
 
 <Dialog {open}>
@@ -21,69 +53,15 @@
     <h3>Nice🎉</h3>
     <p>
       The right answer was indeed
-      {#if inEnglish}
-        <a
-          href="https://en.wikipedia.org/wiki/{encodeURIComponent(
-            trueLang.name.english
-          )}"
-          target="_blank"
-        >
-          {trueLang.name.english} ({trueLang.code})</a
-        >.
-      {:else}
-        <a
-          href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
-            trueLang.name.local
-          )}"
-          target="_blank"
-        >
-          {trueLang.name.local} ({trueLang.code})</a
-        >.
-      {/if}
+      <a href={trueLangURL} target="_blank">{trueLangName}</a>.
     </p>
   {:else}
     <h3>Oops!</h3>
     <p>
       You guessed
-      {#if inEnglish}
-        <a
-          href="https://en.wikipedia.org/wiki/{encodeURIComponent(
-            selectedLang.name.english
-          )}"
-          target="_blank"
-        >
-          {selectedLang.name.english} ({selectedLang.code})
-        </a>
-      {:else}
-        <a
-          href="https://{selectedLang.code}.wikipedia.org/wiki/{encodeURIComponent(
-            selectedLang.name.local
-          )}"
-          target="_blank"
-        >
-          {selectedLang.name.local} ({selectedLang.code})
-        </a>
-      {/if}
+      <a href={selectedLangURL} target="_blank">{selectedLangName}</a>
       but the right answer was
-      {#if inEnglish}
-        <a
-          href="https://en.wikipedia.org/wiki/{encodeURIComponent(
-            trueLang.name.english
-          )}"
-          target="_blank"
-        >
-          {trueLang.name.english} ({trueLang.code})</a
-        >.
-      {:else}
-        <a
-          href="https://{trueLang.code}.wikipedia.org/wiki/{encodeURIComponent(
-            trueLang.name.local
-          )}"
-          target="_blank"
-        >
-          {trueLang.name.local} ({trueLang.code})</a
-        >.
-      {/if}
+      <a href={trueLangURL} target="_blank">{trueLangName}</a>.
     </p>
   {/if}
   <footer style="text-align: unset;">

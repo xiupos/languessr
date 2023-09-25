@@ -23,7 +23,7 @@
   </table>
 </div>
 
-## List of languages
+## List of languages <small>[<a href="https://github.com/xiupos/langguessr/edit/main/README.md">Edit</a>]</small>
 
 Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipedias).
 

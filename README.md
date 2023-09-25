@@ -13,7 +13,7 @@
     <tbody>
       <tr>
         <td>
-          <a href="https://langguessr.xiupos.net/"><img width="400" src="https://github.com/xiupos/langguessr/assets/26175482/e9880cfd-4d73-46ad-9a79-60d25c8b71fe" alt="screenshot"></a>
+          <img width="400" src="https://github.com/xiupos/langguessr/assets/26175482/e9880cfd-4d73-46ad-9a79-60d25c8b71fe" alt="screenshot">
         </td>
       </tr>
       <tr>

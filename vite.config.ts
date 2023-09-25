@@ -15,12 +15,12 @@ export default defineConfig({
           "LangGuessr is a language game which shows you summaries of Wikipedia articles and challenges your ability to recognize languages.",
         icons: [
           {
-            src: "manifest-icon-192.maskable.png",
+            src: "icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "manifest-icon-512.maskable.png",
+            src: "icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },

@@ -35,7 +35,7 @@
         trueLang.name.english
       )}`
     : `https://${trueLang.code}.wikipedia.org/wiki/${encodeURIComponent(
-        trueLang.name.local
+        trueLang.name.local.split("/")[0].trim()
       )}`;
   $: selectedLangURL =
     (selectedLang?.name !== undefined || "") &&

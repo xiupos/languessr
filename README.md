@@ -34,3 +34,4 @@
 - [x] Easy mode
 - [x] PWA
 - [x] Save modes to LocalStorage
+- [ ] Language search in select

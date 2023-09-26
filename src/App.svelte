@@ -6,27 +6,83 @@
   import codeList from "./data/code.json";
   import easyCodeList from "./data/easy.json";
 
-  // easy mode
-  let easyMode: boolean = localStorage.easyMode !== "false";
+  // mode
+  let mode: string = localStorage.mode || "Easy";
+
+  // turns
+  let turns: number = Number(localStorage.turns) || 5;
 </script>
 
-<fieldset>
-  <label>
-    <input
-      type="checkbox"
-      role="switch"
-      bind:checked={easyMode}
-      on:change={() => {
-        localStorage.easyMode = easyMode ? "true" : "false";
-      }}
-    />
-    Easy Mode (100 languages)
-  </label>
-</fieldset>
+<p>You are playing in <mark>{mode}</mark> mode with <mark>{turns}</mark> turns!</p>
 
-{#key easyMode}
-  <LangGuessr
-    codeList={easyMode ? easyCodeList : codeList}
-    mode={easyMode ? "Easy" : "Normal"}
-  />
+{#key mode}
+  {#key turns}
+    <LangGuessr
+      codeList={mode === "Easy" ? easyCodeList : codeList}
+      {mode}
+      {turns}
+    />
+  {/key}
 {/key}
+
+<section>
+  <details>
+    <summary>Settings</summary>
+
+    <fieldset>
+      <legend>Mode</legend>
+      <label>
+        <input
+          type="radio"
+          bind:group={mode}
+          name="mode"
+          value="Easy"
+          on:change={() => {
+            localStorage.mode;
+          }}
+        />
+        Easy
+      </label>
+      <label>
+        <input
+          type="radio"
+          bind:group={mode}
+          name="mode"
+          value="Normal"
+          on:change={() => {
+            localStorage.mode;
+          }}
+        />
+        Normal
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Max number of turns </legend>
+      <label>
+        <input
+          type="radio"
+          bind:group={turns}
+          name="turns"
+          value={5}
+          on:change={() => {
+            localStorage.turns = turns.toString();
+          }}
+        />
+        5
+      </label>
+      <label>
+        <input
+          type="radio"
+          bind:group={turns}
+          name="turns"
+          value={30}
+          on:change={() => {
+            localStorage.turns = turns.toString();
+          }}
+        />
+        30
+      </label>
+    </fieldset>
+  </details>
+</section>

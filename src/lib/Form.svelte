@@ -11,7 +11,7 @@
   };
   export let inEnglish: boolean;
   export let turn: number;
-  export let maxTurn: number;
+  export let turns: number;
   export let guess: () => void;
   export let time: number | undefined = undefined;
 </script>
@@ -44,7 +44,7 @@
     </label>
   </fieldset>
 
-  <input type="button" value="GUESS {turn + 1}/{maxTurn}" on:click={guess} />
+  <input type="button" value="GUESS {turn + 1}/{turns}" on:click={guess} />
 
   {#if time}
     Time: <tt>{format(time)}</tt>

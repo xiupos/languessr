@@ -41,7 +41,7 @@
   // approximate time to display
   let approxTime = tweened(0);
   setInterval(() => {
-    if (turn < maxTurn)
+    if (turn < turns)
       $approxTime = new Date().getTime() - $timer.start.getTime();
   }, 10);
 
@@ -59,7 +59,7 @@
 
   // turn of game
   let turn: number = 0;
-  let maxTurn: number = 5;
+  export let turns: number = 5;
 
   // score of game
   let score: number = 0;
@@ -74,7 +74,7 @@
   const next = () => {
     guessDialog = false;
     turn++;
-    if (turn < maxTurn) {
+    if (turn < turns) {
       trueLang = getRandomLang();
     } else {
       resultTime = stopTimer();
@@ -92,37 +92,39 @@
   };
 </script>
 
-<!-- article frame -->
-<Frame bind:langCode={trueLang.code} />
+<section>
+  <!-- article frame -->
+  <Frame bind:langCode={trueLang.code} />
 
-<!-- guess form -->
-<Form
-  {codeList}
-  bind:selectedLang
-  bind:inEnglish
-  {turn}
-  {maxTurn}
-  {guess}
-  time={$approxTime}
-/>
+  <!-- guess form -->
+  <Form
+    {codeList}
+    bind:selectedLang
+    bind:inEnglish
+    {turn}
+    {turns}
+    {guess}
+    time={$approxTime}
+  />
 
-<!-- guess dialog -->
-<GuessDialog
-  open={guessDialog}
-  {trueLang}
-  {selectedLang}
-  {inEnglish}
-  {score}
-  maxScore={maxTurn}
-  {next}
-/>
+  <!-- guess dialog -->
+  <GuessDialog
+    open={guessDialog}
+    {trueLang}
+    {selectedLang}
+    {inEnglish}
+    {score}
+    maxScore={turns}
+    {next}
+  />
 
-<!-- result dialog -->
-<ResultDialog
-  open={resultDialog}
-  {score}
-  maxScore={maxTurn}
-  {mode}
-  time={resultTime}
-  {restart}
-/>
+  <!-- result dialog -->
+  <ResultDialog
+    open={resultDialog}
+    {score}
+    maxScore={turns}
+    {mode}
+    time={resultTime}
+    {restart}
+  />
+</section>

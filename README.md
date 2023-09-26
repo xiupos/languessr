@@ -475,5 +475,5 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 - [x] PWA
 - [x] Save modes to LocalStorage
 - [ ] Language search in select
-- [ ] Font
+- [x] Font
 - [x] 30 turns mode

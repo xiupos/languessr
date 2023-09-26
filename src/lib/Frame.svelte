@@ -24,13 +24,13 @@
   {:then data}
     <article class="frame" dir="auto">
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-      <h2 on:click={reload}>
+      <h2 on:click={reload} class="ling">
         {data.title}
         <small class="secondary">
           <i class="fa fa-refresh" aria-hidden="true" role="link" />
         </small>
       </h2>
-      <p>{data.extract}</p>
+      <p class="ling">{data.extract || ""}</p>
       <footer dir="ltr">
         <small>
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"

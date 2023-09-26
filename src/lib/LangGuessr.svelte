@@ -66,7 +66,7 @@
 
   // guess button
   const guess = () => {
-    if (trueLang.code === selectedLang.code) score++;
+    if (!guessDialog && !resultDialog && trueLang.code === selectedLang.code) score++;
     guessDialog = true;
   };
 

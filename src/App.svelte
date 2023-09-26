@@ -27,6 +27,6 @@
 {#key easyMode}
   <LangGuessr
     codeList={easyMode ? easyCodeList : codeList}
-    mode={easyMode ? "Easy" : undefined}
+    mode={easyMode ? "Easy" : "Normal"}
   />
 {/key}

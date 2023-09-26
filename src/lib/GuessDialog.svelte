@@ -53,15 +53,15 @@
     <h3>Nice🎉</h3>
     <p>
       The right answer was indeed
-      <a href={trueLangURL} target="_blank" class="ling">{trueLangName}</a>.
+      <a href={trueLangURL} target="_blank" class="lang">{trueLangName}</a>.
     </p>
   {:else}
     <h3>Oops!</h3>
     <p>
       You guessed
-      <a href={selectedLangURL} target="_blank" class="ling">{selectedLangName}</a>
+      <a href={selectedLangURL} target="_blank" class="lang">{selectedLangName}</a>
       but the right answer was
-      <a href={trueLangURL} target="_blank" class="ling">{trueLangName}</a>.
+      <a href={trueLangURL} target="_blank" class="lang">{trueLangName}</a>.
     </p>
   {/if}
   <footer style="text-align: unset;">

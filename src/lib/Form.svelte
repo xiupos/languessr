@@ -23,7 +23,7 @@
     >
     <select bind:value={selectedLang}>
       {#each codeList as lang}
-        <option value={lang}>
+        <option value={lang} class="lang">
           {lang.code} : {inEnglish ? lang.name.english : lang.name.local}
         </option>
       {/each}

@@ -38,7 +38,7 @@
           name="mode"
           value="Easy"
           on:change={() => {
-            localStorage.mode;
+            localStorage.mode = mode;
           }}
         />
         Easy
@@ -50,7 +50,7 @@
           name="mode"
           value="Normal"
           on:change={() => {
-            localStorage.mode;
+            localStorage.mode = mode;
           }}
         />
         Normal

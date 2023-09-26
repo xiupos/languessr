@@ -3,7 +3,7 @@
 
   // language list of wikipedia
   // https://meta.wikimedia.org/wiki/List_of_Wikipedias
-  import codeList from "./data/code.json";
+  import normalCodeList from "./data/code.json";
   import easyCodeList from "./data/easy.json";
 
   // mode
@@ -11,17 +11,22 @@
 
   // turns
   let turns: number = Number(localStorage.turns) || 5;
+
+  // language list
+  let codeList: {
+    code: string;
+    name: { local: string; english: string };
+  }[];
+  $: codeList = mode === "Easy" ? easyCodeList : normalCodeList;
 </script>
 
-<p>You are playing in <mark>{mode}</mark> mode with <mark>{turns}</mark> turns!</p>
+<p>
+  You are playing in <mark>{mode}</mark> mode with <mark>{turns}</mark> turns!
+</p>
 
 {#key mode}
   {#key turns}
-    <LangGuessr
-      codeList={mode === "Easy" ? easyCodeList : codeList}
-      {mode}
-      {turns}
-    />
+    <LangGuessr {codeList} {mode} {turns} />
   {/key}
 {/key}
 

@@ -10,9 +10,15 @@
     return await res.json();
   };
 
+  // reload articles
   const reload = () => {
     unique = {};
   };
+
+  // press R to reload articles
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "r") reload();
+  });
 </script>
 
 {#key unique}
@@ -44,8 +50,8 @@
       </footer>
     </article>
     <p>
-      Click <i class="fa fa-refresh" aria-hidden="true" /> for another article in
-      the same language.
+      Click <i class="fa fa-refresh" aria-hidden="true" /> or press
+      <code>R</code> for another article in the same language.
     </p>
   {:catch error}
     <article aria-busy="true" />

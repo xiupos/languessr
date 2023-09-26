@@ -17,7 +17,7 @@
 
   // press R to reload articles
   document.addEventListener("keydown", (e) => {
-    if (e.key === "r") reload();
+    if (e.key === "r" && !e.repeat) reload();
   });
 </script>
 

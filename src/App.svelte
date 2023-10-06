@@ -3,30 +3,42 @@
 
   // language list of wikipedia
   // https://meta.wikimedia.org/wiki/List_of_Wikipedias
-  import normalCodeList from "./data/code.json";
   import easyCodeList from "./data/easy.json";
+  import normalCodeList from "./data/code.json";
+
+  type CodeList = {
+    code: string;
+    name: { local: string; english: string };
+  }[];
+
+  type ModeList = {
+    name: string;
+    codeList: CodeList;
+  }[];
+
+  const modeList: ModeList = [
+    { name: "Easy", codeList: easyCodeList },
+    { name: "Normal", codeList: normalCodeList },
+  ];
 
   // mode
-  let mode: string = localStorage.mode || "Easy";
+  let mode: ModeList[0] = localStorage.mode0 || modeList[0];
 
   // turns
   let turns: number = Number(localStorage.turns) || 5;
 
   // language list
-  let codeList: {
-    code: string;
-    name: { local: string; english: string };
-  }[];
-  $: codeList = mode === "Easy" ? easyCodeList : normalCodeList;
+  let codeList: CodeList;
+  $: codeList = mode.codeList;
 </script>
 
 <p>
-  You are playing in <mark>{mode}</mark> mode with <mark>{turns}</mark> turns!
+  You are playing in <mark>{mode.name}</mark> mode with <mark>{turns}</mark> turns!
 </p>
 
 {#key mode}
   {#key turns}
-    <LangGuessr {codeList} {mode} {turns} />
+    <LangGuessr codeList={mode.codeList} mode={mode.name} {turns} />
   {/key}
 {/key}
 
@@ -36,30 +48,20 @@
 
     <fieldset>
       <legend>Mode</legend>
-      <label>
-        <input
-          type="radio"
-          bind:group={mode}
-          name="mode"
-          value="Easy"
-          on:change={() => {
-            localStorage.mode = mode;
-          }}
-        />
-        Easy
-      </label>
-      <label>
-        <input
-          type="radio"
-          bind:group={mode}
-          name="mode"
-          value="Normal"
-          on:change={() => {
-            localStorage.mode = mode;
-          }}
-        />
-        Normal
-      </label>
+      {#each modeList as m}
+        <label>
+          <input
+            type="radio"
+            bind:group={mode}
+            name="mode"
+            value={m}
+            on:change={() => {
+              localStorage.mode0 = m;
+            }}
+          />
+          {m.name}
+        </label>
+      {/each}
     </fieldset>
 
     <fieldset>

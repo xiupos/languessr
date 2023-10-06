@@ -28,7 +28,47 @@
 Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipedias).
 
 <details>
-<summary>List of languages (Easy mode)</summary>
+<summary>Beginner mode</summary>
+
+| Code | Name (en) | Name (local) |
+| --- | --- | --- |
+| [ar](https://ar.wikipedia.org/wiki/العربية) | Arabic | العربية |
+| [arz](https://arz.wikipedia.org/wiki/مصرى) | Egyptian Arabic | مصرى |
+| [ca](https://ca.wikipedia.org/wiki/català) | Catalan | català |
+| [ce](https://ce.wikipedia.org/wiki/нохчийн) | Chechen | нохчийн |
+| [ceb](https://ceb.wikipedia.org/wiki/Cebuano) | Cebuano | Cebuano |
+| [cs](https://cs.wikipedia.org/wiki/čeština) | Czech | čeština |
+| [de](https://de.wikipedia.org/wiki/Deutsch) | German | Deutsch |
+| [en](https://en.wikipedia.org/wiki/English) | English | English |
+| [es](https://es.wikipedia.org/wiki/español) | Spanish | español |
+| [fa](https://fa.wikipedia.org/wiki/فارسی) | Persian | فارسی |
+| [fi](https://fi.wikipedia.org/wiki/suomi) | Finnish | suomi |
+| [fr](https://fr.wikipedia.org/wiki/français) | French | français |
+| [hu](https://hu.wikipedia.org/wiki/magyar) | Hungarian | magyar |
+| [id](https://id.wikipedia.org/wiki/Bahasa_Indonesia) | Indonesian | Bahasa Indonesia |
+| [it](https://it.wikipedia.org/wiki/italiano) | Italian | italiano |
+| [ja](https://ja.wikipedia.org/wiki/日本語) | Japanese | 日本語 |
+| [ko](https://ko.wikipedia.org/wiki/한국어) | Korean | 한국어 |
+| [nl](https://nl.wikipedia.org/wiki/Nederlands) | Dutch | Nederlands |
+| [no](https://no.wikipedia.org/wiki/norsk) | Norwegian | norsk |
+| [pl](https://pl.wikipedia.org/wiki/polski) | Polish | polski |
+| [pt](https://pt.wikipedia.org/wiki/português) | Portuguese | português |
+| [ru](https://ru.wikipedia.org/wiki/русский) | Russian | русский |
+| [sr](https://sr.wikipedia.org/wiki/српски) | Serbian | српски / srpski |
+| [sv](https://sv.wikipedia.org/wiki/svenska) | Swedish | svenska |
+| [tr](https://tr.wikipedia.org/wiki/Türkçe) | Turkish | Türkçe |
+| [tt](https://tt.wikipedia.org/wiki/татарча) | Tatar | татарча / tatarça |
+| [uk](https://uk.wikipedia.org/wiki/українська) | Ukrainian | українська |
+| [vi](https://vi.wikipedia.org/wiki/Tiếng_Việt) | Vietnamese | Tiếng Việt |
+| [war](https://war.wikipedia.org/wiki/Winaray) | Waray | Winaray |
+| [zh](https://zh.wikipedia.org/wiki/中文) | Chinese | 中文 |
+| [zh-min-nan](https://zh-min-nan.wikipedia.org/wiki/Bân-lâm-gú) | Min Nan Chinese | Bân-lâm-gú |
+| [zh-yue](https://zh-yue.wikipedia.org/wiki/粵語) | Cantonese | 粵語 |
+
+</details>
+
+<details>
+<summary>Easy mode</summary>
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |
@@ -135,7 +175,7 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 </details>
 
 <details>
-<summary>List of languages</summary>
+<summary>Normal mode</summary>
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |

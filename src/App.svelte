@@ -3,6 +3,7 @@
 
   // language list of wikipedia
   // https://meta.wikimedia.org/wiki/List_of_Wikipedias
+  import beginnerCodeList from "./data/beginner.json";
   import easyCodeList from "./data/easy.json";
   import normalCodeList from "./data/code.json";
 
@@ -17,6 +18,7 @@
   }[];
 
   const modeList: ModeList = [
+    { name: "Beginner", codeList: beginnerCodeList },
     { name: "Easy", codeList: easyCodeList },
     { name: "Normal", codeList: normalCodeList },
   ];
@@ -60,6 +62,7 @@
             }}
           />
           {m.name}
+          <i style="color: var(--secondary)">— {m.codeList.length} languages</i>
         </label>
       {/each}
     </fieldset>

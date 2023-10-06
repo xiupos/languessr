@@ -7,31 +7,27 @@
   import easyCodeList from "./data/easy.json";
   import normalCodeList from "./data/code.json";
 
+  // code list
   type CodeList = {
     code: string;
     name: { local: string; english: string };
   }[];
 
+  // mode
   type ModeList = {
     name: string;
     codeList: CodeList;
   }[];
-
   const modeList: ModeList = [
     { name: "Beginner", codeList: beginnerCodeList },
     { name: "Easy", codeList: easyCodeList },
     { name: "Normal", codeList: normalCodeList },
   ];
-
-  // mode
   let mode: ModeList[0] = localStorage.mode0 || modeList[0];
 
   // turns
-  let turns: number = Number(localStorage.turns) || 5;
-
-  // language list
-  let codeList: CodeList;
-  $: codeList = mode.codeList;
+  const turnsList: number[] = [5, 30];
+  let turns: number = Number(localStorage.turns) || turnsList[0];
 </script>
 
 <p>
@@ -69,30 +65,20 @@
 
     <fieldset>
       <legend>Max number of turns </legend>
-      <label>
-        <input
-          type="radio"
-          bind:group={turns}
-          name="turns"
-          value={5}
-          on:change={() => {
-            localStorage.turns = turns.toString();
-          }}
-        />
-        5
-      </label>
-      <label>
-        <input
-          type="radio"
-          bind:group={turns}
-          name="turns"
-          value={30}
-          on:change={() => {
-            localStorage.turns = turns.toString();
-          }}
-        />
-        30
-      </label>
+      {#each turnsList as t}
+        <label>
+          <input
+            type="radio"
+            bind:group={turns}
+            name="turns"
+            value={t}
+            on:change={() => {
+              localStorage.turns = t.toString();
+            }}
+          />
+          {t}
+        </label>
+      {/each}
     </fieldset>
   </details>
 </section>

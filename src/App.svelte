@@ -14,16 +14,13 @@
   }[];
 
   // mode
-  type ModeList = {
-    name: string;
-    codeList: CodeList;
-  }[];
-  const modeList: ModeList = [
-    { name: "Beginner", codeList: beginnerCodeList },
-    { name: "Easy", codeList: easyCodeList },
-    { name: "Normal", codeList: normalCodeList },
-  ];
-  let mode: ModeList[0] = localStorage.mode0 || modeList[0];
+  type ModeList = { [key: string]: CodeList };
+  const modeList: ModeList = {
+    "Beginner": beginnerCodeList,
+    "Easy": easyCodeList,
+    "Normal": normalCodeList,
+  };
+  let mode: string = localStorage.mode1 || Object.keys(modeList)[0];
 
   // turns
   const turnsList: number[] = [5, 30];
@@ -31,12 +28,12 @@
 </script>
 
 <p>
-  You are playing in <mark>{mode.name}</mark> mode with <mark>{turns}</mark> turns!
+  You are playing in <mark>{mode}</mark> mode with <mark>{turns}</mark> turns!
 </p>
 
 {#key mode}
   {#key turns}
-    <LangGuessr codeList={mode.codeList} mode={mode.name} {turns} />
+    <LangGuessr codeList={modeList[mode]} {mode} {turns} />
   {/key}
 {/key}
 
@@ -46,7 +43,7 @@
 
     <fieldset>
       <legend>Mode</legend>
-      {#each modeList as m}
+      {#each Object.entries(modeList) as [m, codeList]}
         <label>
           <input
             type="radio"
@@ -54,11 +51,11 @@
             name="mode"
             value={m}
             on:change={() => {
-              localStorage.mode0 = m;
+              localStorage.mode1 = m;
             }}
           />
-          {m.name}
-          <i style="color: var(--secondary)">— {m.codeList.length} languages</i>
+          {m}
+          <i style="color: var(--secondary)">— {codeList.length} languages</i>
         </label>
       {/each}
     </fieldset>

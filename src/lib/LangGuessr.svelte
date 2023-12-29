@@ -75,7 +75,7 @@
     guessDialog = false;
     turn++;
     if (turn < turns) {
-      trueLang = getRandomLang();
+      while(trueLang == (trueLang = getRandomLang()));
     } else {
       resultTime = stopTimer();
       resultDialog = true;
@@ -87,7 +87,7 @@
     turn = 0;
     score = 0;
     resultDialog = false;
-    trueLang = getRandomLang();
+    while(trueLang == (trueLang = getRandomLang()));
     startTimer();
   };
 </script>

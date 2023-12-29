@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LangGuessr from "./lib/LangGuessr.svelte";
+  import Languessr from "./lib/Languessr.svelte";
 
   // language list of wikipedia
   // https://meta.wikimedia.org/wiki/List_of_Wikipedias
@@ -33,7 +33,7 @@
 
 {#key mode}
   {#key turns}
-    <LangGuessr codeList={modeList[mode]} {mode} {turns} />
+    <Languessr codeList={modeList[mode]} {mode} {turns} />
   {/key}
 {/key}
 

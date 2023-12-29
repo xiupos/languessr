@@ -20,7 +20,7 @@
   <label>
     Result
     <textarea style="resize: none;" readonly
-      >#LangGuessr 📖 {mode} {score}/{maxScore} in {format(
+      >#Languessr 📖 {mode} {score}/{maxScore} in {format(
         time
       )}{score
         ? " " + "🎉".repeat(score)

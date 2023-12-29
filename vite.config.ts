@@ -9,10 +9,10 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "LangGuessr",
-        short_name: "LangGuessr",
+        name: "Languessr",
+        short_name: "Languessr",
         description:
-          "LangGuessr is a language game which shows you summaries of Wikipedia articles and challenges your ability to recognize languages.",
+          "Languessr is a language game which shows you summaries of Wikipedia articles and challenges your ability to recognize languages.",
         icons: [
           {
             src: "icon-192x192.png",

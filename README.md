@@ -13,7 +13,7 @@
     <tbody>
       <tr>
         <td>
-          <img width="400" src="https://github.com/xiupos/languessr/assets/26175482/e9880cfd-4d73-46ad-9a79-60d25c8b71fe" alt="screenshot">
+          <img width="400" src="https://github.com/xiupos/languessr/assets/26175482/b6619851-5849-4a68-a53d-aaeb40e3efba" alt="screenshot">
         </td>
       </tr>
       <tr>

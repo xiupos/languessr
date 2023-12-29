@@ -40,7 +40,7 @@
           localStorage.inEnglish = inEnglish ? "true" : false;
         }}
       />
-      In English
+      Display names in English
     </label>
   </fieldset>
 

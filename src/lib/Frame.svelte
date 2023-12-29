@@ -3,12 +3,13 @@
 
   let unique = {};
 
-  const fetchSummary = async (langCode: string) => {
-    const res = await fetch(
-      `https://${langCode}.wikipedia.org/api/rest_v1/page/random/summary`
-    );
-    return await res.json();
-  };
+  // fetch random summary from Wikipedia API
+  const fetchSummary = async (langCode: string) =>
+    await (
+      await fetch(
+        `https://${langCode}.wikipedia.org/api/rest_v1/page/random/summary`
+      )
+    ).json();
 
   // reload articles
   const reload = () => {

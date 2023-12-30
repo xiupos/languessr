@@ -33,24 +33,34 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |
 | [ar](https://ar.wikipedia.org/wiki/العربية) | Arabic | العربية |
+| [bn](https://bn.wikipedia.org/wiki/বাংলা) | Bangla | বাংলা |
+| [ca](https://ca.wikipedia.org/wiki/català) | Catalan | català |
 | [cs](https://cs.wikipedia.org/wiki/čeština) | Czech | čeština |
 | [de](https://de.wikipedia.org/wiki/Deutsch) | German | Deutsch |
+| [el](https://el.wikipedia.org/wiki/Ελληνικά) | Greek | Ελληνικά |
 | [en](https://en.wikipedia.org/wiki/English) | English | English |
 | [es](https://es.wikipedia.org/wiki/español) | Spanish | español |
 | [fa](https://fa.wikipedia.org/wiki/فارسی) | Persian | فارسی |
+| [fi](https://fi.wikipedia.org/wiki/suomi) | Finnish | suomi |
 | [fr](https://fr.wikipedia.org/wiki/français) | French | français |
 | [he](https://he.wikipedia.org/wiki/עברית) | Hebrew | עברית |
+| [hi](https://hi.wikipedia.org/wiki/हिन्दी) | Hindi | हिन्दी |
+| [hu](https://hu.wikipedia.org/wiki/magyar) | Hungarian | magyar |
 | [id](https://id.wikipedia.org/wiki/Bahasa_Indonesia) | Indonesian | Bahasa Indonesia |
 | [it](https://it.wikipedia.org/wiki/italiano) | Italian | italiano |
 | [ja](https://ja.wikipedia.org/wiki/日本語) | Japanese | 日本語 |
 | [ko](https://ko.wikipedia.org/wiki/한국어) | Korean | 한국어 |
 | [nl](https://nl.wikipedia.org/wiki/Nederlands) | Dutch | Nederlands |
+| [no](https://no.wikipedia.org/wiki/norsk) | Norwegian | norsk |
 | [pl](https://pl.wikipedia.org/wiki/polski) | Polish | polski |
 | [pt](https://pt.wikipedia.org/wiki/português) | Portuguese | português |
 | [ru](https://ru.wikipedia.org/wiki/русский) | Russian | русский |
+| [simple](https://simple.wikipedia.org/wiki/Simple_English) | Simple English | Simple English |
 | [sv](https://sv.wikipedia.org/wiki/svenska) | Swedish | svenska |
+| [th](https://th.wikipedia.org/wiki/ไทย) | Thai | ไทย |
 | [tr](https://tr.wikipedia.org/wiki/Türkçe) | Turkish | Türkçe |
 | [uk](https://uk.wikipedia.org/wiki/українська) | Ukrainian | українська |
+| [vi](https://vi.wikipedia.org/wiki/Tiếng_Việt) | Vietnamese | Tiếng Việt |
 | [zh](https://zh.wikipedia.org/wiki/中文) | Chinese | 中文 |
 </details>
 

@@ -30,6 +30,8 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 <details>
 <summary>Beginner mode — 30 languages</summary>
 
+Top 30 most written languages by active users. (Dec. 30, 2023)
+
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |
 | [ar](https://ar.wikipedia.org/wiki/العربية) | Arabic | العربية |
@@ -66,6 +68,8 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 
 <details>
 <summary>Easy mode — 100 languages</summary>
+
+Top 100 most written languages by active users. (Dec. 30, 2023)
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |
@@ -173,6 +177,9 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 
 <details>
 <summary>Normal mode — 326 languages</summary>
+
+All languages. (Dec. 30, 2023)
+
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |

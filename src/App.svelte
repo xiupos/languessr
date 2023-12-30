@@ -5,7 +5,7 @@
   // https://meta.wikimedia.org/wiki/List_of_Wikipedias
   import beginnerCodeList from "./data/beginner.json";
   import easyCodeList from "./data/easy.json";
-  import normalCodeList from "./data/code.json";
+  import normalCodeList from "./data/normal.json";
 
   // code list
   type CodeList = {

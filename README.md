@@ -8,6 +8,10 @@
 
 **Languessr** is a [browser-based](https://en.wikipedia.org/wiki/Browser_game) game that challenges your knowledge on world languages. The game shows you a summary of a random [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) article and asks you to recognize what language it is written in.
 
+The game is easy to learn but difficult to master. The summaries are short and concise, so you need to be able to quickly identify key linguistic features. The game also includes a variety of languages, from the most common to the most obscure.
+
+Languessr is a great way to improve your language skills and learn about new cultures. It's also a lot of fun!
+
 <div align="right">
   <table>
     <tbody>

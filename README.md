@@ -28,7 +28,7 @@
 Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipedias).
 
 <details>
-<summary>Beginner mode</summary>
+<summary>Beginner mode — 30 languages</summary>
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 </details>
 
 <details>
-<summary>Easy mode</summary>
+<summary>Easy mode — 100 languages</summary>
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |
@@ -172,7 +172,7 @@ Based on the [list of Wikipedias](https://meta.wikimedia.org/wiki/List_of_Wikipe
 </details>
 
 <details>
-<summary>Normal mode</summary>
+<summary>Normal mode — 326 languages</summary>
 
 | Code | Name (en) | Name (local) |
 | --- | --- | --- |

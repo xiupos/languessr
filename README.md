@@ -530,3 +530,4 @@ All languages. (Dec. 30, 2023)
 - [x] Font
 - [x] 30 turns mode
 - [x] Beginner mode
+- [ ] Scoring by the number of reloading articles

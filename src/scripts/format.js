@@ -1,5 +1,9 @@
-// format time
-export let format = (time: number) => {
+/**
+ * format time
+ * @param {number} time msec
+ * @returns {string} MM:SS.fff
+ */
+export let format = (time) => {
   const min = Math.floor(time / 1000 / 60)
     .toString()
     .padStart(2, "0");

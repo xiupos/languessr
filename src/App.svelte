@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import Languessr from "./lib/Languessr.svelte";
 
   // language list of wikipedia
@@ -7,24 +7,27 @@
   import easyCodeList from "./data/easy.json";
   import normalCodeList from "./data/normal.json";
 
-  // code list
-  type CodeList = {
-    code: string;
-    name: { local: string; english: string };
-  }[];
-
-  // mode
-  type ModeList = { [key: string]: CodeList };
-  const modeList: ModeList = {
+  /**
+   * mode list
+   * @type {{ [key: string]: import("./types.d.ts").LanguageCode[] }}
+   */
+  const modeList = {
     "Beginner": beginnerCodeList,
     "Easy": easyCodeList,
     "Normal": normalCodeList,
   };
-  let mode: string = localStorage.mode1 || Object.keys(modeList)[0];
 
-  // turns
-  const turnsList: number[] = [5, 30];
-  let turns: number = Number(localStorage.turns) || turnsList[0];
+  /** @type {string} */
+  let mode = localStorage.mode1 || Object.keys(modeList)[0];
+
+  /**
+   * list of numbers of turns
+   * @type {number[]}
+   */
+  const turnsList = [5, 30];
+
+  /** @type {number} */
+  let turns = Number(localStorage.turns) || turnsList[0];
 </script>
 
 <p>

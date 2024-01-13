@@ -1,13 +1,19 @@
-<script lang="ts">
-  import { format } from "../scripts/format";
+<script>
+  import { format } from "../scripts/format.js";
   import Dialog from "./Dialog.svelte";
 
-  export let open: boolean;
-  export let score: number;
-  export let maxScore: number | undefined = undefined;
-  export let mode: string | undefined = undefined;
-  export let time: number;
-  export let restart: () => void;
+  /** @type {boolean} */
+  export let open;
+  /** @type {number} */
+  export let score;
+  /** @type {number | undefined} */
+  export let maxScore = undefined;
+  /** @type {string | undefined} */
+  export let mode = undefined;
+  /** @type {number} */
+  export let time;
+  /** @type {() => void} */
+  export let restart;
 </script>
 
 <Dialog {open}>

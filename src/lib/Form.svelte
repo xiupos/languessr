@@ -1,19 +1,26 @@
-<script lang="ts">
-  import { format } from "../scripts/format";
+<script>
+  import { format } from "../scripts/format.js";
 
-  export let codeList: {
-    code: string;
-    name: { local: string; english: string };
-  }[];
-  export let selectedLang: {
-    code: string;
-    name: { local: string; english: string };
-  };
-  export let inEnglish: boolean;
-  export let turn: number;
-  export let turns: number;
-  export let guess: () => void;
-  export let time: number | undefined = undefined;
+  /** @type {import("../types.d.ts").LanguageCode[]} */
+  export let codeList;
+
+  /** @type {import("../types.d.ts").LanguageCode} */
+  export let selectedLang;
+
+  /** @type {boolean} */
+  export let inEnglish;
+
+  /** @type {number} */
+  export let turn;
+
+  /** @type {number} */
+  export let turns;
+
+  /** @type {() => void} */
+  export let guess;
+
+  /** @type {number | undefined} */
+  export let time = undefined;
 </script>
 
 <form>

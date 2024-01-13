@@ -1,25 +1,38 @@
-<script lang="ts">
+<script>
   import Dialog from "./Dialog.svelte";
 
-  export let open: boolean;
-  export let trueLang: {
-    code: string;
-    name: { local: string; english: string };
-  };
-  export let selectedLang: {
-    code: string;
-    name: { local: string; english: string };
-  };
-  export let inEnglish: boolean = false;
-  export let score: number;
-  export let maxScore: number;
-  export let next: () => void;
+  /** @type {boolean} */
+  export let open;
 
-  let trueLangName: string;
-  let selectedLangName: string;
+  /** @type {import("../types.d.ts").LanguageCode} */
+  export let trueLang;
 
-  let trueLangURL: string;
-  let selectedLangURL: string;
+  /** @type {import("../types.d.ts").LanguageCode} */
+  export let selectedLang;
+
+  /** @type {boolean} */
+  export let inEnglish = false;
+
+  /** @type {number} */
+  export let score;
+
+  /** @type {number} */
+  export let maxScore;
+
+  /** @type {() => void} */
+  export let next;
+
+  /** @type {string} */
+  let trueLangName;
+
+  /** @type {string} */
+  let selectedLangName;
+
+  /** @type {string} */
+  let trueLangURL;
+
+  /** @type {string} */
+  let selectedLangURL;
 
   $: trueLangName = inEnglish
     ? `${trueLang.name.english} (${trueLang.code})`

@@ -1,76 +1,129 @@
-<script lang="ts">
+<script>
   import { tweened } from "svelte/motion";
   import Frame from "./Frame.svelte";
   import Form from "./Form.svelte";
   import GuessDialog from "./GuessDialog.svelte";
   import ResultDialog from "./ResultDialog.svelte";
 
-  // language list
-  export let codeList: {
-    code: string;
-    name: { local: string; english: string };
-  }[];
+  /**
+   * language list
+   * @type {import("../types.d.ts").LanguageCode[]}
+   */
+  export let codeList;
 
-  // mode name
-  export let mode: string | undefined = undefined;
+  /**
+   * mode name
+   * @type {string | undefined}
+   */
+  export let mode = undefined;
 
-  // get a random language code
+  /**
+   * get a random language code
+   * @return {import("../types.d.ts").LanguageCode}
+   */
   const getRandomLang = () =>
     codeList[Math.floor(Math.random() * codeList.length)];
 
-  // answer language code
+  /**
+   * answer language code
+   * @type {import("../types.d.ts").LanguageCode}
+   */
   let trueLang = getRandomLang();
 
-  // user-selected languge code
-  let selectedLang: { code: string; name: { local: string; english: string } };
+  /**
+   * user-selected languge code
+   * @type {import("../types.d.ts").LanguageCode}
+   */
+  let selectedLang;
 
-  // time
+  /**
+   * time
+   * @type {import("svelte/motion").Tweened<{ start: Date; stop: Date; }>}
+   */
   let timer = tweened({ start: new Date(), stop: new Date() });
 
-  // start timer
+  /**
+   * start timer
+   * @type {() => void}
+   */
   let startTimer = () => {
     $timer.start = new Date();
   };
 
-  // stop timer
+  /**
+   * stop timer
+   * @return {number}
+   */
   let stopTimer = () => {
     $timer.stop = new Date();
     return $timer.stop.getTime() - $timer.start.getTime();
   };
 
-  // approximate time to display
+  /**
+   * approximate time to display
+   * @type {import("svelte/motion").Tweened<number>}
+   */
   let approxTime = tweened(0);
   setInterval(() => {
     if (turn < turns)
       $approxTime = new Date().getTime() - $timer.start.getTime();
   }, 10);
 
-  // get result time
+  /**
+   * get result time
+   * @type {number}
+   */
   let resultTime = 0;
 
-  // in English mode
-  let inEnglish: boolean = localStorage.inEnglish === "true";
+  /**
+   * in English mode
+   * @type {boolean}
+   */
+  let inEnglish = localStorage.inEnglish === "true";
 
-  // guess-dialog element
-  let guessDialog: boolean = false;
+  /**
+   * guess-dialog element
+   * @type {boolean}
+   */
+  let guessDialog = false;
 
-  // result dialog element
-  let resultDialog: boolean = false;
+  /**
+   * result dialog element
+   * @type {boolean}
+   */
+  let resultDialog = false;
 
-  // turn of game
-  let turn: number = 0;
-  export let turns: number = 5;
+  /**
+   * turn of game
+   * @type {number}
+   */
+  let turn = 0;
 
-  // score of game
-  let score: number = 0;
+  /**
+   * total turns of game
+   * @type {number}
+   */
+  export let turns = 5;
 
-  // guess button
+  /**
+   * score of game
+   * @type {number}
+   */
+  let score = 0;
+
+  /**
+   * guess button
+   * @type {() => void}
+   */
   const guess = () => {
     if (!guessDialog && !resultDialog && trueLang.code === selectedLang.code) score++;
     guessDialog = true;
   };
 
-  // next button
+  /**
+   * next button
+   * @type {() => void}
+   */
   const next = () => {
     guessDialog = false;
     turn++;
@@ -82,7 +135,10 @@
     }
   };
 
-  // restart button
+  /**
+   * next button
+   * @type {() => void}
+   */
   const restart = () => {
     turn = 0;
     score = 0;

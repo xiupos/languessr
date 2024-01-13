@@ -1,6 +1,9 @@
-<script lang="ts">
-  let dialog: HTMLDialogElement;
-  export let open: boolean;
+<script>
+  /** @type {HTMLDialogElement} */
+  let dialog;
+
+  /** @type {boolean} */
+  export let open;
 
   $: if (dialog) dialog.open = open;
 </script>

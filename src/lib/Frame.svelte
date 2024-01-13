@@ -1,17 +1,26 @@
-<script lang="ts">
-  export let langCode: string;
+<script>
+  /** @type {string} */
+  export let langCode;
 
+  /** @type {{}} */
   let unique = {};
 
-  // fetch random summary from Wikipedia API
-  const fetchSummary = async (langCode: string) =>
+  /**
+   * fetch random summary from Wikipedia API
+   * @param {string} langCode
+   * @returns {Promise<any>}
+   */
+  const fetchSummary = async (langCode) =>
     await (
       await fetch(
         `https://${langCode}.wikipedia.org/api/rest_v1/page/random/summary`
       )
     ).json();
 
-  // reload articles
+  /**
+   * reload articles
+   * @type {() => void}
+   */
   const reload = () => {
     unique = {};
   };

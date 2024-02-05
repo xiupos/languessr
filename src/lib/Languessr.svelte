@@ -5,38 +5,6 @@
   import GuessDialog from "./GuessDialog.svelte";
   import ResultDialog from "./ResultDialog.svelte";
 
-  import "@fontsource/noto-sans";
-  import "@fontsource/noto-sans-arabic";
-  import "@fontsource/noto-sans-armenian";
-  import "@fontsource/noto-sans-bengali";
-  import "@fontsource/noto-sans-canadian-aboriginal";
-  import "@fontsource/noto-sans-cherokee";
-  import "@fontsource/noto-sans-devanagari";
-  import "@fontsource/noto-sans-ethiopic";
-  import "@fontsource/noto-sans-georgian";
-  import "@fontsource/noto-sans-gothic";
-  import "@fontsource/noto-sans-gujarati";
-  import "@fontsource/noto-sans-hebrew";
-  import "@fontsource/noto-sans-kannada";
-  import "@fontsource/noto-sans-khmer";
-  import "@fontsource/noto-sans-lao-looped";
-  import "@fontsource/noto-sans-malayalam";
-  import "@fontsource/noto-sans-myanmar";
-  import "@fontsource/noto-sans-newa";
-  import "@fontsource/noto-sans-nko";
-  import "@fontsource/noto-sans-ol-chiki";
-  import "@fontsource/noto-sans-oriya";
-  import "@fontsource/noto-sans-sc";
-  import "@fontsource/noto-sans-sinhala";
-  import "@fontsource/noto-sans-syriac";
-  import "@fontsource/noto-sans-syriac-eastern";
-  import "@fontsource/noto-sans-tamil";
-  import "@fontsource/noto-sans-tamil-supplement";
-  import "@fontsource/noto-sans-telugu";
-  import "@fontsource/noto-sans-thaana";
-  import "@fontsource/noto-sans-thai-looped";
-  import "@fontsource/noto-serif-tibetan";
-
   /**
    * language list
    * @type {import("../types.d.ts").LanguageCode[]}
@@ -218,6 +186,38 @@
 </section>
 
 <style lang="scss">
+  @import "@fontsource/noto-sans";
+  @import "@fontsource/noto-sans-arabic";
+  @import "@fontsource/noto-sans-armenian";
+  @import "@fontsource/noto-sans-bengali";
+  @import "@fontsource/noto-sans-canadian-aboriginal";
+  @import "@fontsource/noto-sans-cherokee";
+  @import "@fontsource/noto-sans-devanagari";
+  @import "@fontsource/noto-sans-ethiopic";
+  @import "@fontsource/noto-sans-georgian";
+  @import "@fontsource/noto-sans-gothic";
+  @import "@fontsource/noto-sans-gujarati";
+  @import "@fontsource/noto-sans-hebrew";
+  @import "@fontsource/noto-sans-kannada";
+  @import "@fontsource/noto-sans-khmer";
+  @import "@fontsource/noto-sans-lao-looped";
+  @import "@fontsource/noto-sans-malayalam";
+  @import "@fontsource/noto-sans-myanmar";
+  @import "@fontsource/noto-sans-newa";
+  @import "@fontsource/noto-sans-nko";
+  @import "@fontsource/noto-sans-ol-chiki";
+  @import "@fontsource/noto-sans-oriya";
+  @import "@fontsource/noto-sans-sc";
+  @import "@fontsource/noto-sans-sinhala";
+  @import "@fontsource/noto-sans-syriac";
+  @import "@fontsource/noto-sans-syriac-eastern";
+  @import "@fontsource/noto-sans-tamil";
+  @import "@fontsource/noto-sans-tamil-supplement";
+  @import "@fontsource/noto-sans-telugu";
+  @import "@fontsource/noto-sans-thaana";
+  @import "@fontsource/noto-sans-thai-looped";
+  @import "@fontsource/noto-serif-tibetan";
+
   :global(.lang) {
     font-family: system-ui, -apple-system, "Noto Sans", "Noto Sans Arabic",
       "Noto Sans Armenian", "Noto Sans Bengali",

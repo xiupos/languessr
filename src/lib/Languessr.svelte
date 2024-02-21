@@ -6,44 +6,44 @@
   import ResultDialog from "./ResultDialog.svelte";
 
   /**
-   * language list
+   * List of languages
    * @type {import("../types.d.ts").LanguageCode[]}
    */
   export let codeList;
 
   /**
-   * mode name
+   * Mode name such as `easy` or `normal`
    * @type {string | undefined}
    */
   export let mode = undefined;
 
   /**
-   * get a random language code
+   * Function to get a random language code
    * @return {import("../types.d.ts").LanguageCode}
    */
   const getRandomLang = () =>
     codeList[Math.floor(Math.random() * codeList.length)];
 
   /**
-   * answer language code
+   * Answer language
    * @type {import("../types.d.ts").LanguageCode}
    */
   let trueLang = getRandomLang();
 
   /**
-   * user-selected languge code
+   * User-selected languge
    * @type {import("../types.d.ts").LanguageCode}
    */
   let selectedLang;
 
   /**
-   * time
+   * Timer
    * @type {import("svelte/motion").Tweened<{ start: Date; stop: Date; }>}
    */
   let timer = tweened({ start: new Date(), stop: new Date() });
 
   /**
-   * start timer
+   * Function to start the timer
    * @type {() => void}
    */
   let startTimer = () => {
@@ -51,7 +51,7 @@
   };
 
   /**
-   * stop timer
+   * Function to stop the timer
    * @return {number}
    */
   let stopTimer = () => {
@@ -60,90 +60,106 @@
   };
 
   /**
-   * approximate time to display
+   * Approximate time to be displayed always
    * @type {import("svelte/motion").Tweened<number>}
    */
   let approxTime = tweened(0);
+  // update every 10 ms
   setInterval(() => {
     if (turn < turns)
       $approxTime = new Date().getTime() - $timer.start.getTime();
   }, 10);
 
   /**
-   * get result time
+   * Result time taken for all turns
    * @type {number}
    */
   let resultTime = 0;
 
   /**
-   * in English mode
+   * Flag to display all language names in English
    * @type {boolean}
    */
   let inEnglish = localStorage.inEnglish === "true";
 
   /**
-   * guess-dialog element
+   * Flag that the guess-dialog element is opened
    * @type {boolean}
    */
   let guessDialog = false;
 
   /**
-   * result dialog element
+   * Flag that the result dialog element is opened
    * @type {boolean}
    */
   let resultDialog = false;
 
   /**
-   * turn of game
+   * Current game turn number
    * @type {number}
    */
   let turn = 0;
 
   /**
-   * total turns of game
+   * Total game turn number
    * @type {number}
    */
   export let turns = 5;
 
   /**
-   * score of game
+   * Score of game
    * @type {number}
    */
   let score = 0;
 
   /**
-   * guess button
+   * Function of the guess button
    * @type {() => void}
    */
   const guess = () => {
-    if (!guessDialog && !resultDialog && trueLang.code === selectedLang.code) score++;
+    // if the guess is correct and any dialogs has not opened, increment the score
+    if (trueLang.code === selectedLang.code && !guessDialog && !resultDialog)
+      score++;
+    // open a guess-dialog
     guessDialog = true;
   };
 
   /**
-   * next button
+   * Function for the next button
    * @type {() => void}
    */
   const next = () => {
+    // close the guess-dialog
     guessDialog = false;
+    // increment the turn number
     turn++;
+
     if (turn < turns) {
-      while(trueLang == (trueLang = getRandomLang()));
+      // if turns has not completed,
+      // make the answer another language
+      while (trueLang == (trueLang = getRandomLang()));
     } else {
+      // if turns has completed (<=> the game ended)
+      // stop the timer
       resultTime = stopTimer();
+      // open a result dialog
       resultDialog = true;
     }
   };
 
   /**
-   * next button
+   * Function for the restart button
    * @type {() => void}
    */
   const restart = () => {
+    // reset numberes
     turn = 0;
     score = 0;
+    // close the result dialog
     resultDialog = false;
-    while(trueLang == (trueLang = getRandomLang()));
+    // make the answer another language
+    while (trueLang == (trueLang = getRandomLang()));
+    // restart the timer
     startTimer();
   };
 </script>
@@ -219,16 +235,39 @@
   @import "@fontsource/noto-serif-tibetan";
 
   :global(.lang) {
-    font-family: system-ui, -apple-system, "Noto Sans", "Noto Sans Arabic",
-      "Noto Sans Armenian", "Noto Sans Bengali",
-      "Noto Sans Canadian Aboriginal", "Noto Sans Cherokee",
-      "Noto Sans Devanagari", "Noto Sans Ethiopic", "Noto Sans Georgian",
-      "Noto Sans Gothic", "Noto Sans Gujarati", "Noto Sans Hebrew",
-      "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao Looped",
-      "Noto Sans Malayalam", "Noto Sans Myanmar", "Noto Sans Newa",
-      "Noto Sans NKo", "Noto Sans Ol Chiki", "Noto Sans Oriya", "Noto Sans SC",
-      "Noto Sans Sinhala", "Noto Sans Syriac", "Noto Sans Syriac Eastern",
-      "Noto Sans Tamil", "Noto Sans Tamil Supplement", "Noto Sans Telugu",
-      "Noto Sans Thaana", "Noto Sans Thai Looped", "Noto Serif Tibetan";
+    font-family:
+      system-ui,
+      -apple-system,
+      "Noto Sans",
+      "Noto Sans Arabic",
+      "Noto Sans Armenian",
+      "Noto Sans Bengali",
+      "Noto Sans Canadian Aboriginal",
+      "Noto Sans Cherokee",
+      "Noto Sans Devanagari",
+      "Noto Sans Ethiopic",
+      "Noto Sans Georgian",
+      "Noto Sans Gothic",
+      "Noto Sans Gujarati",
+      "Noto Sans Hebrew",
+      "Noto Sans Kannada",
+      "Noto Sans Khmer",
+      "Noto Sans Lao Looped",
+      "Noto Sans Malayalam",
+      "Noto Sans Myanmar",
+      "Noto Sans Newa",
+      "Noto Sans NKo",
+      "Noto Sans Ol Chiki",
+      "Noto Sans Oriya",
+      "Noto Sans SC",
+      "Noto Sans Sinhala",
+      "Noto Sans Syriac",
+      "Noto Sans Syriac Eastern",
+      "Noto Sans Tamil",
+      "Noto Sans Tamil Supplement",
+      "Noto Sans Telugu",
+      "Noto Sans Thaana",
+      "Noto Sans Thai Looped",
+      "Noto Serif Tibetan";
   }
 </style>

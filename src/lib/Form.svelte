@@ -1,25 +1,46 @@
 <script>
   import { format } from "../scripts/format.js";
 
-  /** @type {import("../types.d.ts").LanguageCode[]} */
+  /**
+   * Answer language
+   * @type {import("../types.d.ts").LanguageCode[]}
+   */
   export let codeList;
 
-  /** @type {import("../types.d.ts").LanguageCode} */
+  /**
+   * User-selected languge
+   * @type {import("../types.d.ts").LanguageCode}
+   */
   export let selectedLang;
 
-  /** @type {boolean} */
+  /**
+   * Flag to display all language names in English
+   * @type {boolean}
+   */
   export let inEnglish;
 
-  /** @type {number} */
+  /**
+   * Current game turn number
+   * @type {number}
+   */
   export let turn;
 
-  /** @type {number} */
+  /**
+   * Total game turn number
+   * @type {number}
+   */
   export let turns;
 
-  /** @type {() => void} */
+  /**
+   * Function of the guess button
+   * @type {() => void}
+   */
   export let guess;
 
-  /** @type {number | undefined} */
+  /**
+   * Function for the next button
+   * @type {number | undefined}
+   */
   export let time = undefined;
 </script>
 

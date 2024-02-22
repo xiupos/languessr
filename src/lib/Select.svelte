@@ -25,7 +25,7 @@
   --item-is-active-bg="var(--primary)"
   --list-border="var(--border-width) solid var(--dropdown-border-color)"
   --list-border-radius="var(--border-radius)"
-  --list-background="var(var(--dropdown-background-color))"
+  --list-background="var(--dropdown-background-color)"
   --list-shadow="var(--card-box-shadow)"
   --clear-select-focus-outline="var(--border-width) solid var(--form-element-active-border-color)"
 />

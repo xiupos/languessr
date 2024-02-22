@@ -526,7 +526,7 @@ All languages. (Dec. 30, 2023)
 - [x] Easy mode
 - [x] PWA
 - [x] Save modes to LocalStorage
-- [ ] Language search in select
+- [x] Language search in select
 - [x] Font
 - [x] 30 turns mode
 - [x] Beginner mode

@@ -1,5 +1,6 @@
 <script>
   import { format } from "../scripts/format.js";
+  import Select from "./Select.svelte";
 
   /**
    * Answer language
@@ -45,17 +46,20 @@
 </script>
 
 <form>
+  <!-- svelte-ignore a11y-label-has-associated-control -->
   <label>
     Select your guess <i style="color: var(--secondary)"
       >from {codeList.length} language{#if codeList.length > 1}s{/if}</i
     >
-    <select bind:value={selectedLang}>
-      {#each codeList as lang}
-        <option value={lang} class="lang">
-          {lang.code} : {inEnglish ? lang.name.english : lang.name.local}
-        </option>
-      {/each}
-    </select>
+    <Select
+      bind:value={selectedLang}
+      items={codeList.map((lang) => ({
+        value: lang,
+        label: `${lang.code} : ${
+          inEnglish ? lang.name.english : lang.name.local
+        }`,
+      }))}
+    />
   </label>
 
   <fieldset>

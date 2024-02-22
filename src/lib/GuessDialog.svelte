@@ -72,8 +72,8 @@
     <h3>Oops!</h3>
     <p>
       You guessed
-      <a href={selectedLangURL} target="_blank" class="lang">{selectedLangName}</a>
-      but the right answer was
+      <a href={selectedLangURL} target="_blank" class="lang">{selectedLangName}</a>,
+      but the correct answer is
       <a href={trueLangURL} target="_blank" class="lang">{trueLangName}</a>.
     </p>
   {/if}

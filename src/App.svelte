@@ -8,17 +8,18 @@
   import normalCodeList from "./data/normal.json";
 
   /**
-   * mode list
-   * @type {{ [key: string]: import("./types.d.ts").LanguageCode[] }}
+   * list of mode
+   * @type {{ [key: string]: { display: string, codeList: import("./types.d.ts").LanguageCode[] } }}
    */
-  const modeList = {
-    "Beginner": beginnerCodeList,
-    "Easy": easyCodeList,
-    "Normal": normalCodeList,
+  const modes = {
+    beginner: { display: "Beginner", codeList: beginnerCodeList },
+    easy: { display: "Easy", codeList: easyCodeList },
+    normal: { display: "Normal", codeList: normalCodeList },
   };
 
   /** @type {string} */
-  let mode = localStorage.mode1 || Object.keys(modeList)[0];
+  let mode =
+    localStorage.mode in modes ? localStorage.mode : Object.keys(modes)[0];
 
   /**
    * list of numbers of turns
@@ -27,16 +28,23 @@
   const turnsList = [5, 30];
 
   /** @type {number} */
-  let turns = Number(localStorage.turns) || turnsList[0];
+  let turns = turnsList.includes(Number(localStorage.turns))
+    ? Number(localStorage.turns)
+    : turnsList[0];
 </script>
 
 <p>
-  You are playing in <mark>{mode}</mark> mode with <mark>{turns}</mark> turns!
+  You are playing in <mark>{modes[mode].display}</mark> mode with
+  <mark>{turns}</mark> turns!
 </p>
 
 {#key mode}
   {#key turns}
-    <Languessr codeList={modeList[mode]} {mode} {turns} />
+    <Languessr
+      codeList={modes[mode].codeList}
+      mode={modes[mode].display}
+      {turns}
+    />
   {/key}
 {/key}
 
@@ -46,19 +54,21 @@
 
     <fieldset>
       <legend>Mode</legend>
-      {#each Object.entries(modeList) as [m, codeList]}
+      {#each Object.entries(modes) as [name, _mode]}
         <label>
           <input
             type="radio"
             bind:group={mode}
             name="mode"
-            value={m}
+            value={name}
             on:change={() => {
-              localStorage.mode1 = m;
+              localStorage.mode = name;
             }}
           />
-          {m}
-          <i style="color: var(--secondary)">— {codeList.length} languages</i>
+          {_mode.display}
+          <i style="color: var(--secondary)"
+            >— {_mode.codeList.length} languages</i
+          >
         </label>
       {/each}
     </fieldset>

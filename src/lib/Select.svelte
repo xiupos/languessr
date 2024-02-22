@@ -36,6 +36,7 @@
     --item-hover-bg="var(--dropdown-hover-background-color)"
     --item-color="var(--dropdown-color)"
     --item-is-active-bg="var(--primary)"
+    --item-active-background="var(--primary)"
     --list-border="var(--border-width) solid var(--dropdown-border-color)"
     --list-border-radius="var(--border-radius)"
     --list-background="var(--dropdown-background-color)"

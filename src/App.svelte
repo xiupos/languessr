@@ -5,6 +5,12 @@
   // https://meta.wikimedia.org/wiki/List_of_Wikipedias
   import beginnerCodeList from "./data/beginner.json";
   import easyCodeList from "./data/easy.json";
+  import easyArabicCodeList from "./data/easy_arabic.json";
+  import easyBaltoSlavicCodeList from "./data/easy_balto-slavic.json";
+  import easyGermanicCodeList from "./data/easy_germanic.json";
+  import easyRomanceCodeList from "./data/easy_romance.json";
+  import easyTurkicCodeList from "./data/easy_turkic.json";
+  import easySouthAsianCodeList from "./data/easy_south_asian.json";
   import normalCodeList from "./data/normal.json";
 
   /**
@@ -14,6 +20,30 @@
   const modes = {
     beginner: { display: "Beginner", codeList: beginnerCodeList },
     easy: { display: "Easy", codeList: easyCodeList },
+    easy_ara: {
+      display: "Easy (Arabic script only)",
+      codeList: easyArabicCodeList,
+    },
+    easy_bs: {
+      display: "Easy (Balto-Slavic only)",
+      codeList: easyBaltoSlavicCodeList,
+    },
+    easy_g: {
+      display: "Easy (Germanic only)",
+      codeList: easyGermanicCodeList,
+    },
+    easy_r: {
+      display: "Easy (Romance only)",
+      codeList: easyRomanceCodeList,
+    },
+    easy_t: {
+      display: "Easy (Turkic only)",
+      codeList: easyTurkicCodeList,
+    },
+    easy_sa: {
+      display: "Easy (South Asian only)",
+      codeList: easySouthAsianCodeList,
+    },
     normal: { display: "Normal", codeList: normalCodeList },
   };
 

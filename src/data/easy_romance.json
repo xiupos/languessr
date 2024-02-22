@@ -1,0 +1,12 @@
+[
+  { "code": "ast", "name": { "english": "Asturian", "local": "asturianu" } },
+  { "code": "ca", "name": { "english": "Catalan", "local": "català" } },
+  { "code": "es", "name": { "english": "Spanish", "local": "español" } },
+  { "code": "fr", "name": { "english": "French", "local": "français" } },
+  { "code": "ga", "name": { "english": "Irish", "local": "Gaeilge" } },
+  { "code": "gl", "name": { "english": "Galician", "local": "galego" } },
+  { "code": "it", "name": { "english": "Italian", "local": "italiano" } },
+  { "code": "la", "name": { "english": "Latin", "local": "Latina" } },
+  { "code": "pt", "name": { "english": "Portuguese", "local": "português" } },
+  { "code": "ro", "name": { "english": "Romanian", "local": "română" } }
+]

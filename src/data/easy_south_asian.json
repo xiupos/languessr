@@ -1,0 +1,14 @@
+[
+  { "code": "as", "name": { "english": "Assamese", "local": "অসমীয়া" } },
+  { "code": "bn", "name": { "english": "Bangla", "local": "বাংলা" } },
+  { "code": "kn", "name": { "english": "Kannada", "local": "ಕನ್ನಡ" } },
+  { "code": "ml", "name": { "english": "Malayalam", "local": "മലയാളം" } },
+  { "code": "my", "name": { "english": "Burmese", "local": "မြန်မာဘာသာ" } },
+  { "code": "ne", "name": { "english": "Nepali", "local": "नेपाली" } },
+  { "code": "pa", "name": { "english": "Punjabi", "local": "ਪੰਜਾਬੀ" } },
+  { "code": "sa", "name": { "english": "Sanskrit", "local": "संस्कृतम्" } },
+  { "code": "si", "name": { "english": "Sinhala", "local": "සිංහල" } },
+  { "code": "ta", "name": { "english": "Tamil", "local": "தமிழ்" } },
+  { "code": "te", "name": { "english": "Telugu", "local": "తెలుగు" } },
+  { "code": "ur", "name": { "english": "Urdu", "local": "اردو" } }
+]

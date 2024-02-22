@@ -1,0 +1,8 @@
+[
+  { "code": "ar", "name": { "english": "Arabic", "local": "العربية" } },
+  { "code": "arz", "name": { "english": "Egyptian Arabic", "local": "مصرى" } },
+  { "code": "azb", "name": { "english": "South Azerbaijani", "local": "تۆرکجه" } },
+  { "code": "ckb", "name": { "english": "Central Kurdish", "local": "کوردی" } },
+  { "code": "fa", "name": { "english": "Persian", "local": "فارسی" } },
+  { "code": "ur", "name": { "english": "Urdu", "local": "اردو" } }
+]

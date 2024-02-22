@@ -1,0 +1,10 @@
+[
+  { "code": "az", "name": { "english": "Azerbaijani", "local": "azərbaycanca" } },
+  { "code": "azb", "name": { "english": "South Azerbaijani", "local": "تۆرکجه" } },
+  { "code": "ba", "name": { "english": "Bashkir", "local": "башҡортса" } },
+  { "code": "kk", "name": { "english": "Kazakh", "local": "қазақша" } },
+  { "code": "ky", "name": { "english": "Kyrgyz", "local": "кыргызча" } },
+  { "code": "tr", "name": { "english": "Turkish", "local": "Türkçe" } },
+  { "code": "tt", "name": { "english": "Tatar", "local": "татарча / tatarça" } },
+  { "code": "uz", "name": { "english": "Uzbek", "local": "oʻzbekcha / ўзбекча" } }
+]

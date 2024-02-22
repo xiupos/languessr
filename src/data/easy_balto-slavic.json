@@ -1,0 +1,18 @@
+[
+  { "code": "be", "name": { "english": "Belarusian", "local": "беларуская" } },
+  { "code": "be-tarask", "name": { "english": "Belarusian (Taraškievica orthography)", "local": "беларуская (тарашкевіца)" } },
+  { "code": "bg", "name": { "english": "Bulgarian", "local": "български" } },
+  { "code": "bs", "name": { "english": "Bosnian", "local": "bosanski" } },
+  { "code": "cs", "name": { "english": "Czech", "local": "čeština" } },
+  { "code": "hr", "name": { "english": "Croatian", "local": "hrvatski" } },
+  { "code": "lt", "name": { "english": "Lithuanian", "local": "lietuvių" } },
+  { "code": "lv", "name": { "english": "Latvian", "local": "latviešu" } },
+  { "code": "mk", "name": { "english": "Macedonian", "local": "македонски" } },
+  { "code": "pl", "name": { "english": "Polish", "local": "polski" } },
+  { "code": "ru", "name": { "english": "Russian", "local": "русский" } },
+  { "code": "sh", "name": { "english": "Serbo-Croatian", "local": "srpskohrvatski / српскохрватски" } },
+  { "code": "sk", "name": { "english": "Slovak", "local": "slovenčina" } },
+  { "code": "sl", "name": { "english": "Slovenian", "local": "slovenščina" } },
+  { "code": "sr", "name": { "english": "Serbian", "local": "српски / srpski" } },
+  { "code": "uk", "name": { "english": "Ukrainian", "local": "українська" } }
+]

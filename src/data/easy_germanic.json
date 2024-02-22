@@ -1,0 +1,16 @@
+[
+  { "code": "af", "name": { "english": "Afrikaans", "local": "Afrikaans" } },
+  { "code": "als", "name": { "english": "Alemannic", "local": "Alemannisch" } },
+  { "code": "da", "name": { "english": "Danish", "local": "dansk" } },
+  { "code": "de", "name": { "english": "German", "local": "Deutsch" } },
+  { "code": "en", "name": { "english": "English", "local": "English" } },
+  { "code": "fy", "name": { "english": "Western Frisian", "local": "Frysk" } },
+  { "code": "is", "name": { "english": "Icelandic", "local": "íslenska" } },
+  { "code": "lb", "name": { "english": "Luxembourgish", "local": "Lëtzebuergesch" } },
+  { "code": "nl", "name": { "english": "Dutch", "local": "Nederlands" } },
+  { "code": "nn", "name": { "english": "Norwegian Nynorsk", "local": "norsk nynorsk" } },
+  { "code": "no", "name": { "english": "Norwegian", "local": "norsk" } },
+  { "code": "sco", "name": { "english": "Scots", "local": "Scots" } },
+  { "code": "simple", "name": { "english": "Simple English", "local": "Simple English" } },
+  { "code": "sv", "name": { "english": "Swedish", "local": "svenska" } }
+]

@@ -20,8 +20,12 @@
   --border-hover="var(--border-width) solid var(--form-element-border-color)"
   --border-focused="var(--border-width) solid var(--form-element-active-border-color)"
   --background="var(--form-element-background-color)"
-  --list-background="var(--background-color)"
   --item-hover-bg="var(--dropdown-hover-background-color)"
   --item-color="var(--dropdown-color)"
   --item-is-active-bg="var(--primary)"
+  --list-border="var(--border-width) solid var(--dropdown-border-color)"
+  --list-border-radius="var(--border-radius)"
+  --list-background="var(var(--dropdown-background-color))"
+  --list-shadow="var(--card-box-shadow)"
+  --clear-select-focus-outline="var(--border-width) solid var(--form-element-active-border-color)"
 />

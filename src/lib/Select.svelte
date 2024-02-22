@@ -22,7 +22,6 @@
   --background="var(--form-element-background-color)"
   --list-background="var(--background-color)"
   --item-hover-bg="var(--dropdown-hover-background-color)"
-  --list-max-height="20rem"
   --item-color="var(--dropdown-color)"
   --item-is-active-bg="var(--primary)"
 />

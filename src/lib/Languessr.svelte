@@ -123,7 +123,10 @@
    * @type {() => void}
    */
   const guess = () => {
-    // if the guess is correct and any dialogs has not opened, increment the score
+    // if no languages has selected, do nothing
+    if(!selectedLang) return;
+
+    // if the guess is correct and no dialogs has opened, increment the score
     if (trueLang.code === selectedLang.code && !guessDialog && !resultDialog)
       score++;
     // open a guess-dialog

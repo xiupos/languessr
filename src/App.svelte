@@ -76,18 +76,17 @@
     <fieldset>
       <legend>Max number of turns </legend>
       {#each turnsList as t}
-        <label>
-          <input
-            type="radio"
-            bind:group={turns}
-            name="turns"
-            value={t}
-            on:change={() => {
-              localStorage.turns = t.toString();
-            }}
-          />
-          {t}
-        </label>
+        <input
+          type="radio"
+          bind:group={turns}
+          name="turns"
+          id={String(t)}
+          value={t}
+          on:change={() => {
+            localStorage.turns = t.toString();
+          }}
+        />
+        <label for={String(t)} style="margin-right: 1.5em">{t}</label>
       {/each}
     </fieldset>
   </details>

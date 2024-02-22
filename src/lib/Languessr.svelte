@@ -107,6 +107,12 @@
   export let turns = 5;
 
   /**
+   * Flag to use the native select input
+   * @type {boolean}
+   */
+  export let nativeSelect = false;
+
+  /**
    * Score of game
    * @type {number}
    */
@@ -177,6 +183,7 @@
     {turns}
     {guess}
     time={$approxTime}
+    {nativeSelect}
   />
 
   <!-- guess dialog -->

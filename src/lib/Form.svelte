@@ -43,6 +43,12 @@
    * @type {number | undefined}
    */
   export let time = undefined;
+
+  /**
+   * Flag to use the native select input
+   * @type {boolean}
+   */
+  export let nativeSelect = false;
 </script>
 
 <form>
@@ -59,6 +65,7 @@
           inEnglish ? lang.name.english : lang.name.local
         }`,
       }))}
+      {nativeSelect}
     />
   </label>
 

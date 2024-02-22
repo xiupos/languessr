@@ -57,6 +57,12 @@
    */
   const turnsList = [5, 30];
 
+  /**
+   * Flag to use the native select input
+   * @type {boolean}
+   */
+  let nativeSelect = localStorage.nativeSelect === "true" || false;
+
   /** @type {number} */
   let turns = turnsList.includes(Number(localStorage.turns))
     ? Number(localStorage.turns)
@@ -70,11 +76,14 @@
 
 {#key mode}
   {#key turns}
-    <Languessr
-      codeList={modes[mode].codeList}
-      mode={modes[mode].display}
-      {turns}
-    />
+    {#key nativeSelect}
+      <Languessr
+        codeList={modes[mode].codeList}
+        mode={modes[mode].display}
+        {nativeSelect}
+        {turns}
+      />
+    {/key}
   {/key}
 {/key}
 
@@ -104,7 +113,7 @@
     </fieldset>
 
     <fieldset>
-      <legend>Max number of turns </legend>
+      <legend>Max number of turns</legend>
       {#each turnsList as t}
         <input
           type="radio"
@@ -118,6 +127,22 @@
         />
         <label for={String(t)} style="margin-right: 1.5em">{t}</label>
       {/each}
+    </fieldset>
+
+    <fieldset>
+      <legend>Select box</legend>
+      <label>
+        <input
+          type="checkbox"
+          bind:checked={nativeSelect}
+          name="nativeSelect"
+          role="switch"
+          on:change={() => {
+            localStorage.nativeSelect = nativeSelect;
+          }}
+        />
+        Use the native select box
+      </label>
     </fieldset>
   </details>
 </section>

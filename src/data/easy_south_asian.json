@@ -1,6 +1,7 @@
 [
   { "code": "as", "name": { "english": "Assamese", "local": "অসমীয়া" } },
   { "code": "bn", "name": { "english": "Bangla", "local": "বাংলা" } },
+  { "code": "hi", "name": { "english": "Hindi", "local": "हिन्दी" } },
   { "code": "kn", "name": { "english": "Kannada", "local": "ಕನ್ನಡ" } },
   { "code": "ml", "name": { "english": "Malayalam", "local": "മലയാളം" } },
   { "code": "my", "name": { "english": "Burmese", "local": "မြန်မာဘာသာ" } },

@@ -63,6 +63,17 @@
    */
   let nativeSelect = localStorage.nativeSelect === "true" || false;
 
+  /**
+   * Flag for dark mode
+   * @type {boolean}
+   */
+  let darkMode =
+    localStorage.darkMode === "true" ? true :
+    localStorage.darkMode === "false" ? false :
+    window.matchMedia("(prefers-color-scheme: dark)").matches ||
+    false;
+  $: document.querySelector("html")?.setAttribute("data-theme", darkMode ? "dark" : "light");
+
   /** @type {number} */
   let turns = turnsList.includes(Number(localStorage.turns))
     ? Number(localStorage.turns)
@@ -130,7 +141,7 @@
     </fieldset>
 
     <fieldset>
-      <legend>Select box</legend>
+      <legend>Other</legend>
       <label>
         <input
           type="checkbox"
@@ -142,6 +153,18 @@
           }}
         />
         Use the native select box
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          bind:checked={darkMode}
+          name="darkMode"
+          role="switch"
+          on:change={() => {
+            localStorage.darkMode = darkMode;
+          }}
+        />
+        Dark mode
       </label>
     </fieldset>
   </details>

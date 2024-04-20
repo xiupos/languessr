@@ -16,7 +16,7 @@
   export let restart;
 
   /** @type {String} */
-  const resultText =
+  $: resultText =
     `#Languessr 📖 ${mode} ${score}/${maxScore} in ${format(time)}${score ? " " + "🎉".repeat(score) : ""}` +
     "\n" +
     location.href;

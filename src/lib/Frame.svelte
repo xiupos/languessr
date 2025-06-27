@@ -14,17 +14,35 @@
    * @returns {Promise<any>}
    */
   const fetchSummary = async (langCode) => {
-    let res;
+    let article;
     do {
-      res = await (
-        await fetch(
-          // Wikimedia REST API
-          `https://${langCode}.wikipedia.org/api/rest_v1/page/random/summary`
-        )
-      ).json();
+      const API_ENDPOINT = `https://${langCode}.wikipedia.org/w/api.php`;
+
+      const params = new URLSearchParams({
+        action: "query",
+        format: "json",
+        origin: "*", // Required for CORS requests
+
+        // Use the generator to get one random page
+        generator: "random",
+        grnnamespace: "0", // Limit to the "main" article namespace
+        grnlimit: "1", // Get only one page
+
+        // Specify the properties to retrieve from the generated page
+        prop: "extracts|info",
+        exsentences: "4", // Limit the extract with the number of sentences
+        exintro: "true", // Limit the extract to the introduction section
+        explaintext: "true", // Get the extract as plain text, without HTML tags
+      });
+
+      // Fetch a random article via MediaWiki API
+      article = Object.values(
+        (await (await fetch(`${API_ENDPOINT}?${params}`)).json()).query.pages
+      )[0];
+
       // if the title is empty, redo fetch
-    } while (!res.title);
-    return res;
+    } while (!article.title);
+    return { title: article.title, extract: article.extract };
   };
 
   /**
@@ -69,7 +87,7 @@
             >CC BY-SA 4.0</a
           >
           from
-          <a href="https://en.wikipedia.org/api/rest_v1/" target="_blank"
+          <a href="https://en.wikipedia.org/w/api.php" target="_blank"
             >Wikipedia</a
           >
         </small>
